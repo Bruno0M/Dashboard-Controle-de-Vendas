@@ -1,0 +1,44 @@
+name: dockercompose452165836102643400
+services:
+  dashboard-api:
+    build:
+      context: E:\ProjetosCsharp\Dashboard-Controle-de-Vendas\DashboardAPI\DashboardAPI
+      dockerfile: DashboardAPI/Dockerfile
+    container_name: dashboard-api
+    depends_on:
+      dashboard-db:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    networks:
+      dashboard_net: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "4652"
+        protocol: tcp
+  dashboard-db:
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: Dashboard01
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      dashboard_net: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "8002"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: dashboard-mssql
+        target: /var/opt/mssql
+        volume: {}
+networks:
+  dashboard_net:
+    name: dockercompose452165836102643400_dashboard_net
+    driver: bridge
+volumes:
+  dashboard-mssql:
+    name: dockercompose452165836102643400_dashboard-mssql

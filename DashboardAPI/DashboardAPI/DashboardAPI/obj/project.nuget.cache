@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Cq88CzcHyFC1FDNjpR4WrBgoAwS3VMMilkZn2vZU3lkEch+d5DJWntTEwyaA6V5vckz4a/XRerAv9uMT39GKWw==",
+  "dgSpecHash": "e+6qBeVbKev8hXsYkSaRf98D4z8A/+3IGg5EzolMQzC4Jx3ZzLX1nvmCPvOOhMReifMp2bDi3e/fnkWlNZtH2A==",
   "success": true,
-  "projectFilePath": "E:\\ProjetosCsharp\\DashboardAPI\\DashboardAPI\\DashboardAPI\\DashboardAPI.csproj",
+  "projectFilePath": "E:\\ProjetosCsharp\\Dashboard-Controle-de-Vendas\\DashboardAPI\\DashboardAPI\\DashboardAPI\\DashboardAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bruno\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Bruno\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

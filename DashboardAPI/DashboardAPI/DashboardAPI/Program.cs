@@ -72,8 +72,7 @@ namespace DashboardAPI
                 app.UseSwaggerUI();
             }
 
-            //var devClient = "http://localhost:4200";
-            var devClient = "http://localhost:4652";
+            var devClient = "http://localhost:4200";
 
 
             app.UseCors(x =>
