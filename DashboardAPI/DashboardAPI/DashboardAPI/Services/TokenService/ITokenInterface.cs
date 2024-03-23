@@ -5,6 +5,6 @@ namespace DashboardAPI.Services.TokenService
 {
     public interface ITokenInterface
     {
-        string GenerateToken(UserModel user);
+        object GenerateToken(UserModel user);
     }
 }

@@ -14,7 +14,7 @@ namespace DashboardAPI.Services.TokenService
         {
             _config = config;
         }
-        public string GenerateToken(UserModel user)
+        public object GenerateToken(UserModel user)
         {
             var handler = new JwtSecurityTokenHandler();
 

@@ -1,8 +1,13 @@
 
 using DashboardAPI.Data.Context;
+using DashboardAPI.Dto;
+using DashboardAPI.Models;
 using DashboardAPI.Services;
 using DashboardAPI.Services.TokenService;
 using DashboardAPI.Services.UserService;
+using DashboardAPI.Validators;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -23,11 +28,14 @@ namespace DashboardAPI
 
             // Add services to the container.
 
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            //Fluent Validation
+            builder.Services.AddTransient<IValidator<UserLoginDto>, UserLoginValidator>();
+            builder.Services.AddTransient<IValidator<UserCreationDto>, UserCreationValidator>();
+
 
             builder.Services.AddScoped<IUserInterface, UserService>();
             builder.Services.AddTransient<ITokenInterface, TokenService>();
@@ -73,7 +81,6 @@ namespace DashboardAPI
             }
 
             var devClient = "http://localhost:4200";
-
 
             app.UseCors(x =>
             x.AllowAnyOrigin()

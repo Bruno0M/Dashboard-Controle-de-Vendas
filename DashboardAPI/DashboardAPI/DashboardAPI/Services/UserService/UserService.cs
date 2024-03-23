@@ -3,6 +3,7 @@ using DashboardAPI.Dto;
 using DashboardAPI.Models;
 using DashboardAPI.Services.TokenService;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -18,40 +19,43 @@ namespace DashboardAPI.Services.UserService
             _tokenInterface = tokenInterface;
         }
 
-        public async Task<Response<string>> Login(UserLoginDto user)
+        public async Task<Response<object>> Login(UserLoginDto user)
         {
-            Response<string> response = new Response<string>();
+            var response = new Response<object>();
 
             try
             {
                 var userData = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
-
                 if (userData == null)
                 {
-                    response.Message = "Invalid Credentials!";
-                    response.Status = false;
+                    response.Data = null;
+                    response.Message = "Invalid Credentials";
+                    response.Status = HttpStatusCode.BadRequest;
+
                     return response;
                 }
 
                 if (!VerifyPassword(user.Password, userData.PasswordHash, userData.PasswordSalt))
                 {
-                    response.Message = "Invalid Credentials!";
-                    response.Status = false;
+
+                    response.Data = null;
+                    response.Message = "Invalid Credentials";
+                    response.Status = HttpStatusCode.BadRequest;
+
                     return response;
                 }
 
-                var token = _tokenInterface.GenerateToken(userData);
+                object token = new { Token = _tokenInterface.GenerateToken(userData) };
 
                 response.Data = token;
-                response.Message = "User logged in successfully!";
-                response.Status = true;
-            }
-            catch (Exception ex)
-            {
-                response.Message = ex.Message;
-                response.Status = false;
-            }
+                response.Message = "Successful login";
+                response.Status = HttpStatusCode.OK;
 
+            }
+            catch (Exception ex) 
+            { 
+                response.Message = ex.Message;
+            };
             return response;
         }
 
@@ -59,12 +63,12 @@ namespace DashboardAPI.Services.UserService
         {
             Response<UserCreationDto> response = new Response<UserCreationDto>();
 
-           try
-           {
-                if(!VerifyUserAndEmailExist(userCreationDto))
+            try
+            {
+                if (!VerifyUserAndEmailExist(userCreationDto))
                 {
                     response.Message = "Registered Email";
-                    response.Status = false;
+                    response.Status = HttpStatusCode.BadRequest;
                     return response;
                 }
 
@@ -83,27 +87,26 @@ namespace DashboardAPI.Services.UserService
                 await _context.SaveChangesAsync();
 
                 response.Message = "Successfully registered";
-                response.Status = true;
-           }
-           catch (Exception ex)
-           {
+                response.Status = HttpStatusCode.OK;
+            }
+            catch (Exception ex)
+            {
                 response.Message = ex.Message;
-                response.Status = false;
-           }
+            }
 
             return response;
         }
 
         private void CreateHashPassword(string password, out byte[] senhaHash, out byte[] senhaSalt)
         {
-            using(HMACSHA512 hmac =  new HMACSHA512())
+            using (HMACSHA512 hmac = new HMACSHA512())
             {
                 senhaSalt = hmac.Key;
                 senhaHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             }
         }
 
-        private bool VerifyPassword(string password, byte[] senhaHash, byte[] senhaSalt) 
+        private bool VerifyPassword(string password, byte[] senhaHash, byte[] senhaSalt)
         {
             using (var hmac = new HMACSHA512(senhaSalt))
             {
@@ -115,8 +118,8 @@ namespace DashboardAPI.Services.UserService
         private bool VerifyUserAndEmailExist(UserCreationDto userCreationDto)
         {
             var user = _context.Users.FirstOrDefault(userData => userData.Email == userCreationDto.Email);
-            
-            if(user != null) return false;
+
+            if (user != null) return false;
 
             return true;
         }
