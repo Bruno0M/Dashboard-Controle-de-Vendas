@@ -7,11 +7,11 @@ namespace DashboardAPI.Validators
     {
         public UserCreationValidator()
         {
-            RuleFor(x => x.Name)
+            RuleFor(x => x.FirstName)
                 .NotEmpty()
                 .MaximumLength(50);
 
-            RuleFor(x => x.Surname)
+            RuleFor(x => x.LastName)
                 .NotEmpty()
                 .MaximumLength(50);
 

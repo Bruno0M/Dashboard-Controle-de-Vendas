@@ -76,8 +76,8 @@ namespace DashboardAPI.Services.UserService
 
                 UserModel user = new UserModel()
                 {
-                    Name = userCreationDto.Name,
-                    Surname = userCreationDto.Surname,
+                    FirstName = userCreationDto.FirstName,
+                    LastName = userCreationDto.LastName,
                     Email = userCreationDto.Email,
                     PasswordHash = passwordHash,
                     PasswordSalt = passwordSalt

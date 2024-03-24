@@ -11,11 +11,11 @@ namespace DashboardAPI.Map
             builder.ToTable("tb_users");
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Name)
+            builder.Property(x => x.FirstName)
                 .HasColumnName("name")
                 .IsRequired();
 
-            builder.Property(x => x.Surname)
+            builder.Property(x => x.LastName)
                 .HasColumnName("surname")
                 .IsRequired();
 

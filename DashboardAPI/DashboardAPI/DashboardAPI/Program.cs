@@ -1,18 +1,13 @@
 
 using DashboardAPI.Data.Context;
 using DashboardAPI.Dto;
-using DashboardAPI.Models;
-using DashboardAPI.Services;
 using DashboardAPI.Services.TokenService;
 using DashboardAPI.Services.UserService;
 using DashboardAPI.Validators;
 using FluentValidation;
-using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using System;
 using System.Text;
 
 namespace DashboardAPI
@@ -64,9 +59,11 @@ namespace DashboardAPI
                 x.SaveToken = true;
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
+                    RequireExpirationTime = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("AppSettings:PrivateKey").Value)),
                     ValidateIssuer = false,
-                    ValidateAudience = false
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero,
                 };
 
             });
