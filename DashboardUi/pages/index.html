@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="login.js"></script>
+    <script src="register.js"></script>
     <title>Login Page</title>
 </head>
 <body>
 
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
+            <form id="form-register">
                 <h1>Crie sua conta</h1>
-                <input type="text" placeholder="Primeiro Nome">
-                <input type="text" placeholder="Segundo Nome">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Senha">
-                <input type="password" placeholder="Confirme a Senha">
+                <input id="firstName" type="text" placeholder="Primeiro Nome">
+                <input id="lastName" type="text" placeholder="Segundo Nome">
+                <input id="email" type="email" placeholder="Email">
+                <input id="password" type="password" placeholder="Senha">
+                <input id="confirmPassword" type="password" placeholder="Confirme a Senha">
                 <button>Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
+            <form id="form-login">
                 <h1>Entre na sua conta</h1>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Senha">
+                <input id="emailLogin" type="email" placeholder="Email">
+                <input id="passwordLogin" type="password" placeholder="Senha">
                 <button>LOGAR</button>
             </form>
         </div>
