@@ -24,4 +24,4 @@ jobs:
           context: DashboardAPI/DashboardAPI/DashboardAPI
           file: DashboardAPI/DashboardAPI/DashboardAPI/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USER }}/${{ github.event.repository.name }}:latest
+          tags: ${{ github.event.repository.name }}/dashboard-api:latest
