@@ -24,4 +24,4 @@ jobs:
           context: DashboardAPI/DashboardAPI/DashboardAPI
           file: DashboardAPI/DashboardAPI/DashboardAPI/Dockerfile
           push: true
-          tags: ${{ github.event.repository.name }}/dashboard-api:latest
+          tags: dashboard-controle-de-vendas/dashboard-api:latest
