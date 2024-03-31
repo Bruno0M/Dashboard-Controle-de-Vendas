@@ -1,0 +1,30 @@
+name: Build Backend CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      -'DashboardAPI/**'
+      -'.github/workflows/main.yml'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v4.1.2
+      
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3.1.0
+        with:
+          username: ${{secrets.DOCKERHUB_USER}}
+          password: ${{secrets.DOCKERHUB_PWD}}
+      
+      - name: Build and push Docker image
+      - uses: docker/build-push-action@v5.3.0
+        with:
+          context: ./DashboardAPI/DashboardAPI
+          file: ./DashboardAPI/DashboardAPI/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USER }}/${{ github.event.repository.name }}:latest
