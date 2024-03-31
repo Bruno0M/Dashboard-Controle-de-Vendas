@@ -6,7 +6,6 @@ on:
       - main
     paths:
       -'DashboardAPI/**'
-      -'.github/workflows/main.yml'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,7 +23,7 @@ jobs:
       - name: Build and push Docker image
       - uses: docker/build-push-action@v5.3.0
         with:
-          context: ./DashboardAPI/DashboardAPI
-          file: ./DashboardAPI/DashboardAPI/Dockerfile
+          context: DashboardAPI/DashboardAPI/DashboardAPI
+          file: DashboardAPI/DashboardAPI/DashboardAPI/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USER }}/${{ github.event.repository.name }}:latest
