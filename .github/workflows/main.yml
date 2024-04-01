@@ -24,4 +24,4 @@ jobs:
           context: DashboardAPI/DashboardAPI/DashboardAPI
           file: DashboardAPI/DashboardAPI/DashboardAPI/Dockerfile
           push: true
-          tags: dashboard-controle-de-vendas/dashboard-api:latest
+          tags: ${{ secrets.DOCKER_USER }}/dashboard-api:latest
