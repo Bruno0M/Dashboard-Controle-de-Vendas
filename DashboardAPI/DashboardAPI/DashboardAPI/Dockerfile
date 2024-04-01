@@ -1,17 +1,20 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+USER app
 WORKDIR /app
 EXPOSE 8080
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["DashboardAPI/DashboardAPI/DashboardAPI.csproj", "DashboardAPI/"]
-RUN dotnet restore "DashboardAPI/DashboardAPI.csproj"
-COPY . .
+COPY ["DashboardAPI.csproj", "DashboardAPI/"]
+RUN dotnet restore "./DashboardAPI/DashboardAPI.csproj"
 WORKDIR "/src/DashboardAPI"
-RUN dotnet build "DashboardAPI.csproj" -c Release -o /app/build
+COPY . .
+RUN dotnet build "./DashboardAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "DashboardAPI.csproj" -c Release -o /app/publish /p:UseAppHost=false
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./DashboardAPI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
