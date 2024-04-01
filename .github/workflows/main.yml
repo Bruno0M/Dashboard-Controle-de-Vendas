@@ -24,3 +24,4 @@ jobs:
           context: DashboardAPI/DashboardAPI/DashboardAPI
           file: DashboardAPI/DashboardAPI/DashboardAPI/Dockerfile
           push: true
+          tags: bruno0m/dashboard-api:latest
