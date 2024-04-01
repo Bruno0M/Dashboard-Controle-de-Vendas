@@ -4,7 +4,7 @@ EXPOSE 8080
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["DashboardAPI/DashboardAPI.csproj", "DashboardAPI/"]
+COPY ["DashboardAPI/DashboardAPI/DashboardAPI.csproj", "DashboardAPI/"]
 RUN dotnet restore "DashboardAPI/DashboardAPI.csproj"
 COPY . .
 WORKDIR "/src/DashboardAPI"
