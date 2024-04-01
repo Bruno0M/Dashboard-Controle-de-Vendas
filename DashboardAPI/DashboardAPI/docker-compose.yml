@@ -1,0 +1,36 @@
+services:
+    dashboard-api:
+        container_name: dashboard-api
+        build:
+            dockerfile: DashboardAPI/Dockerfile
+            context: .
+        ports:
+            - 4652:8080
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        depends_on:
+            - dashboard-db
+        networks:
+            dashboard_net:
+    
+
+    dashboard-db:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        environment:
+            - "ACCEPT_EULA=Y"
+            - "MSSQL_SA_PASSWORD=Dashboard01"
+        volumes:
+            - "dashboard-mssql:/var/opt/mssql"
+        ports:
+            - 8002:1433
+        networks:
+            - dashboard_net
+
+
+volumes:
+    dashboard-mssql:
+
+
+networks:
+    dashboard_net:
+        driver: bridge
