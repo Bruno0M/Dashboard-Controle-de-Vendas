@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Relatório</a></li>
+            <li><a href="#">Configurações</a></li>
+        </ul>
+    </div>
+
+    <div class="painel-controle">
+        <div class="cartao total">
+            <p>Total</p>
+            <h1>R$0.00</h1>
+            <span>Preço total de todos os itens</span>
+        </div>
+        <div class="cartao bebidas">
+            <p>Bebidas</p>
+            <h1>R$0.00</h1>
+            <span>Preço total das bebidas</span>
+        </div>
+        <div class="cartao comidas">
+            <p>Comidas</p>
+            <h1>R$0.00</h1>
+            <span>Preço total das comidas</span>
+        </div>
+    </div>
+
+    <div class="graph-container">
+        <div class="chart-container">
+            <canvas id="grafico-pizza" width="400" height="400"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="grafico-coluna" width="800" height="400"></canvas>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

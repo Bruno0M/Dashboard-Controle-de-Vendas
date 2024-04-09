@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1f1f1f; /* Cor de Fundo */
+    color: #ffffff; /* Cor do Texto */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background: hsl(0 0% 100% / 0.1); /* Cor de fundo com transparência */
+    backdrop-filter: blur(0.1rem); /* Efeito de desfoque */
+    width: 200px; /* Largura da Navbar */
+    height: 100vh; /* Altura da Navbar */
+    position: fixed; /* Navbar fixada na tela */
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin-bottom: 10px;
+}
+
+.navbar ul li a {
+    display: block;
+    color: #ffffff; /* Cor do Texto do Link */
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar ul li a:hover {
+    background-color: #23137b; /* Cor de Fundo do Link ao Passar o Mouse */
+}
+
+.painel-controle {
+    max-width: 1200px;
+    margin-left: 220px; /* Largura da Navbar + Espaço */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartao {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.cartao p {
+    margin-top: 0;
+}
+
+.cartao h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.cartao span {
+    font-size: 14px;
+}
+
+.total {
+    background-color: #2196F3; /* Azul Escuro */
+}
+
+.bebidas {
+    background-color: #4caf50; /* Azul */
+}
+
+.comidas {
+    background-color: #abb429; /* Verde */
+}
+
+.graph-container {
+    max-width: 1200px; /* Ajuste conforme necessário */
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart-container {
+    width: 45%; /* Largura do contêiner do gráfico */
+}
