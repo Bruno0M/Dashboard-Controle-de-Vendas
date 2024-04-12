@@ -1,5 +1,4 @@
-﻿using DashboardAPI.Dto;
-using DashboardAPI.Models;
+﻿using DashboardAPI.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -37,6 +36,7 @@ namespace DashboardAPI.Services.TokenService
         private static ClaimsIdentity GenerateClaims(UserModel user)
         {
             var ci = new ClaimsIdentity();
+            ci.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
             ci.AddClaim(new Claim(ClaimTypes.Email, user.Email));
 
             return ci;

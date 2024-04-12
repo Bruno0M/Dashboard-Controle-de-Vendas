@@ -1,6 +1,8 @@
 
 using DashboardAPI.Data.Context;
 using DashboardAPI.Dto;
+using DashboardAPI.Dtos;
+using DashboardAPI.Services.ProductService;
 using DashboardAPI.Services.TokenService;
 using DashboardAPI.Services.UserService;
 using DashboardAPI.Validators;
@@ -30,10 +32,12 @@ namespace DashboardAPI
             //Fluent Validation
             builder.Services.AddTransient<IValidator<UserLoginDto>, UserLoginValidator>();
             builder.Services.AddTransient<IValidator<UserCreationDto>, UserCreationValidator>();
+            builder.Services.AddTransient<IValidator<ProductDto>, ProductValidator>();
 
 
             builder.Services.AddScoped<IUserInterface, UserService>();
             builder.Services.AddTransient<ITokenInterface, TokenService>();
+            builder.Services.AddScoped<IProductInterface, ProductService>();
 
 
             builder.Services.AddDbContext<DashboardContext>(options =>
