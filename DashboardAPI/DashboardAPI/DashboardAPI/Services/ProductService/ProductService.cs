@@ -25,7 +25,9 @@ namespace DashboardAPI.Services.ProductService
                 var productDtos = products.Select(p => new ProductDto
                 {
                     Name = p.Name,
-                    Price = p.Price
+                    Price = p.Price,
+                    Categoria = p.Categoria,
+                    Quantidade = p.Quantidade,
                 });
 
                 response.Data = productDtos;
