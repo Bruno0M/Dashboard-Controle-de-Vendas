@@ -1,31 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Creator: CorelDRAW 2020 (64 Bit) -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="210mm" height="297mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 21000 29700"
- xmlns:xlink="http://www.w3.org/1999/xlink"
- xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
- <defs>
-  <font id="FontID0" horiz-adv-x="795" font-variant="normal" style="fill-rule:nonzero" font-weight="700">
-	<font-face 
-		font-family="Bion">
-		<font-face-src>
-			<font-face-name name="Bion Bold"/>
-		</font-face-src>
-	</font-face>
-   <missing-glyph><path d="M0 0z"/></missing-glyph>
-   <glyph unicode="$" horiz-adv-x="642" d="M254.998 -101.998l130.003 0 0 94.9984c130.999,20.9995 205.999,97.0013 205.999,211.001 0,267.996 -325.998,186.998 -325.998,296.997 0,33.0014 27.9993,50.0003 81.9951,50.0003 64.005,0 142.005,-18.9966 217.005,-55.9987l0 162.999c-59.0029,27.003 -116.003,43.0004 -177.004,48.9988l0 87.0023 -128.996 0 0 -89c-123.003,-19.0017 -193.001,-91.9992 -193.001,-203 0,-268.002 324.997,-190.002 324.997,-299 0,-37.002 -32.9963,-55.9987 -93.997,-55.9987 -69.002,0 -169.999,29.0008 -235,68.0005l0 -168.001c58.0015,-32 123.999,-51.0017 193.998,-58.0015l0 -90.9978z"/>
-  </font>
-  <style type="text/css">
-   <![CDATA[
-    @font-face { font-family:"Bion";font-variant:normal;font-weight:bold;src:url("#FontID0") format(svg)}
-    .fil0 {fill:#FEFEFE}
-    .fnt0 {font-weight:bold;font-size:1967.19px;font-family:'Bion'}
-   ]]>
-  </style>
- </defs>
- <g id="Camada_x0020_1">
-  <metadata id="CorelCorpID_0Corel-Layer"/>
-  <text x="-41709.75" y="8453.82"  class="fil0 fnt0">$</text>
- </g>
-</svg>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 235.517 235.517" xml:space="preserve" fill="#ffffff" stroke="#ffffff">
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier"> <g> <path style="fill:#ffffff;" d="M118.1,235.517c7.898,0,14.31-6.032,14.31-13.483c0-7.441,0-13.473,0-13.473 c39.069-3.579,64.932-24.215,64.932-57.785v-0.549c0-34.119-22.012-49.8-65.758-59.977V58.334c6.298,1.539,12.82,3.72,19.194,6.549 c10.258,4.547,22.724,1.697,28.952-8.485c6.233-10.176,2.866-24.47-8.681-29.654c-11.498-5.156-24.117-8.708-38.095-10.236V8.251 c0-4.552-6.402-8.251-14.305-8.251c-7.903,0-14.31,3.514-14.31,7.832c0,4.335,0,7.843,0,7.843 c-42.104,3.03-65.764,25.591-65.764,58.057v0.555c0,34.114,22.561,49.256,66.862,59.427v33.021 c-10.628-1.713-21.033-5.243-31.623-10.65c-11.281-5.755-25.101-3.72-31.938,6.385c-6.842,10.1-4.079,24.449,7.294,30.029 c16.709,8.208,35.593,13.57,54.614,15.518v13.755C103.79,229.36,110.197,235.517,118.1,235.517z M131.301,138.12 c14.316,4.123,18.438,8.257,18.438,15.681v0.555c0,7.979-5.776,12.651-18.438,14.033V138.12z M86.999,70.153v-0.549 c0-7.152,5.232-12.657,18.71-13.755v29.719C90.856,81.439,86.999,77.305,86.999,70.153z"/> </g> </g>
+</svg>
