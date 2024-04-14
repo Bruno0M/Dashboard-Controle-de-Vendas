@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <title>Tela Inicial</title>
+</head>
+<body>
+      <section class="main">
+        <div class="sidebar">
+          <div class="user">
+            <img src="../../assets/images_home/logoSi.png" alt="" width="80px">
+            <h3>Jose Kayky</h3>
+          </div>
+          
+
+          <a class="sidebar-active" href="#"><img src="../../assets/images_main/grid.svg" alt="" width="18px"> Dashboard</a>
+          <a href="#"><img src="../../assets/images_main/box archive.svg" alt="" width="18px"> Produtos</a>
+          <a href="#"><img src="../../assets/images_main/user.svg" alt="" width="18px"> Perfil</a>
+          <a href="#"><img src="../../assets/images_main/gear.svg" alt="" width="18px"> Configurações</a>
+        </div>
+        <div class="content">
+          
+          <div class="title">
+            <h2>Visão Geral de Vendas</h2>
+          </div>
+          <div class="box-info">
+            <div class="box-info-single"
+            style="background-image: linear-gradient(45deg, #45A5EB, #155E93);">
+              <img src="../../assets/images_main/dolar.svg" alt="">
+              <div class="info-text">
+                <h3>Faturamento</h3>
+                <p>R$99.999</p>
+              </div>
+            </div>
+
+            <div class="box-info-single"
+            style="background-image: linear-gradient(45deg, #3eca3c, #1C741B);">
+              <img src="../../assets/images_main/target.svg" alt="">
+              <div class="info-text">
+                <h3>Meta</h3>
+                <p>99%</p>
+              </div>
+            </div>
+
+            <div class="box-info-single" style="background-image: linear-gradient(45deg, #f7bb4c, #AF8416);">
+              <img src="../../assets/images_main/chart.svg" alt="">
+              <div class="info-text">
+                <h3>Ticket Médio</h3>
+                <p>R$9.999</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="graphics">
+
+            <div class="graph-box">
+              <canvas id="graph01"></canvas>
+            </div>
+
+            <div class="graph-box">
+              <canvas id="graph02"></canvas>
+            </div>
+
+            <div class="graph-box">
+              <canvas id="graph03"></canvas>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <script src="../dashboard_main/main.js" ></script>    
+</body>
+</html>
