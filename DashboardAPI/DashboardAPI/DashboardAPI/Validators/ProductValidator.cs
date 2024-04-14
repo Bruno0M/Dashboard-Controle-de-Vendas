@@ -13,6 +13,12 @@ namespace DashboardAPI.Validators
 
             RuleFor(x => x.Price)
                 .NotEmpty();
+
+            RuleFor(x => x.Categoria)
+                .NotEmpty();
+
+            RuleFor(x => x.Quantidade)
+                .NotEmpty();
         }
     }
 }
