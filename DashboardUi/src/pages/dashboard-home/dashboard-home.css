@@ -108,6 +108,7 @@ html, body{
     color: white;
     padding: 30px;
 }
+
 .info-text h3{
     font-weight: 300;
 }
@@ -116,13 +117,28 @@ html, body{
     width: 40px;
     
 }
-.graphics{
+
+.graphic-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
-.graph-box{
+.graphics-bar{
+    display: flex;
+    flex-direction: column;
+    height: 412px;
+    width: 812px;
+    background-color: bisque;
+}
+
+.graph-box-bar{
     margin: 10px 10px;
-    width: 30%;
+    width: 50%;
+    height: 50%;
     background-color: white;
+}
+
+.graph-box-doughnut {
+    width: 30%;
+    height: 30%;
 }

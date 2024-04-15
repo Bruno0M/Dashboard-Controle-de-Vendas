@@ -8,12 +8,12 @@ const ctx = document.getElementById('graph01');
         {
           label: 'Dataset 1',
           data: [1000, 2000, 3000, 4000],
-          backgroundColor: 'red',
+          backgroundColor: 'rgba(255, 99, 132, 0.6)',
         },
         {
           label: 'Dataset 2',
           data: [1200, 1300, 1400, 1500],
-          backgroundColor: 'blue',
+          backgroundColor: 'rgba(54, 162, 235, 0.6)',
         },
       ]
     },
