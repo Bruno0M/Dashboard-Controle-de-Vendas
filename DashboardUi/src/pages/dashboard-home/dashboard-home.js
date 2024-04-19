@@ -1,6 +1,7 @@
-const ctx = document.getElementById('graph01');
 
-  new Chart(ctx, {
+const bar01 = document.getElementById('graph01');
+
+  new Chart(bar01, {
     type: 'bar',
     data: {
       labels: ['Mes1', 'Mes2', 'Mes3', 'Mes4'],
@@ -28,9 +29,9 @@ const ctx = document.getElementById('graph01');
     }
   });
 
-const ctz = document.getElementById('graph02');
+const bar02 = document.getElementById('graph02');
 
-  new Chart(ctz, {
+  new Chart(bar02, {
     type: 'bar',
     data: {
       labels: ['Mes1', 'Mes2', 'Mes3', 'Mes4'],
@@ -49,12 +50,13 @@ const ctz = document.getElementById('graph02');
     }
   });
 
-  const cty = document.getElementById('graph03');
+const donut01 = document.getElementById('graph03');
 
-  new Chart(cty, {
+  new Chart(donut01, {
     type: 'doughnut',
     data: {
       labels: ['Categoria A', 'Categoria B', 'Categoria C'],
+
       datasets: [{
         label: '# of Votes',
         data: [30, 19, 3, 5, ],
@@ -76,3 +78,28 @@ const ctz = document.getElementById('graph02');
     
   });
 
+const hor01 = document.getElementById('graph04');
+
+  new Chart(hor01, {
+  type: 'bar',
+  data: {
+    labels: ['a', 'b', 'c', 'd', 'e'],
+    datasets: [{
+      axis: 'y',
+      label: 'My First Dataset',
+      data: [100, 90, 80, 70, 60],
+      fill: false,
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.9)',
+      ],
+      borderColor: [
+        'rgb(255, 99, 132)',
+      ],
+    }]
+  },
+
+  options: {
+    indexAxis: 'y',
+  }
+
+});

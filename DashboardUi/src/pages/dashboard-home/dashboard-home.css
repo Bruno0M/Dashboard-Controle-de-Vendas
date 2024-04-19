@@ -14,6 +14,7 @@ html, body{
     display: flex;
     flex-wrap: wrap;
     height: 100%;
+    overflow: hidden;
 }
 .sidebar .user{
     margin: 20% 0;
@@ -83,6 +84,7 @@ html, body{
 .title{
     background-color: white;
     border-radius: 10px;
+    width: 60%;
     padding: 10px;
 }
 
@@ -91,54 +93,96 @@ html, body{
 }
 
 .box-info{
-    width: 75%;
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
     padding-bottom: 20px;
 }
 
+.icons-sort, #up, #down{
+    width: 18px;
+    display: block;
+}
+
 .box-info-single{
     display: flex;
-    font-size: 20px;
+    font-size: 15px;
     justify-content: space-around;
-    width: 80%;
+    width: 30%;
     border-radius: 10px;
     margin: 0 10px;
     color: white;
-    padding: 30px;
+    padding: 10px;
 }
 
 .info-text h3{
     font-weight: 300;
+    font-size: 28px;
+}
+.info-text p{
+    font-weight: 700;
+    font-size: 20px;
+}
+.info-text .data{
+    display: flex;
+    align-items: center;
+}
+.info-text .data p{
+    width: 150px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 10px;
 }
 
 .box-info-single img{
-    width: 40px;
+    width: 60px;
     
 }
 
 .graphic-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .graphics-bar{
     display: flex;
     flex-direction: column;
-    height: 412px;
-    width: 812px;
-    background-color: bisque;
+    width: 74vh;
 }
 
 .graph-box-bar{
     margin: 10px 10px;
-    width: 50%;
-    height: 50%;
     background-color: white;
+    border-radius: 15px;
 }
 
 .graph-box-doughnut {
-    width: 30%;
-    height: 30%;
+    width: 20%;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to right, #002aff9a, #161A6C);
+    border-radius: 15px;
+
+}
+.graph-box-doughnut .box {
+    width: 250px;
+}
+
+.graph-box-doughnut h3{
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-weight: 400;
+}
+.box h2{
+    color: white;
+    padding: 30px 10px;
+}
+.box02{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 260px;
 }
