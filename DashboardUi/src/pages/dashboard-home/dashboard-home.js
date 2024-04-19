@@ -78,28 +78,35 @@ const donut01 = document.getElementById('graph03');
     
   });
 
-const hor01 = document.getElementById('graph04');
+  function updateProgressBar(container, quantidade) {
 
-  new Chart(hor01, {
-  type: 'bar',
-  data: {
-    labels: ['a', 'b', 'c', 'd', 'e'],
-    datasets: [{
-      axis: 'y',
-      label: 'My First Dataset',
-      data: [100, 90, 80, 70, 60],
-      fill: false,
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.9)',
-      ],
-      borderColor: [
-        'rgb(255, 99, 132)',
-      ],
-    }]
-  },
+    var progressBarContainer = document.createElement("div");
+    progressBarContainer.className = "progress-bar-container";
 
-  options: {
-    indexAxis: 'y',
+    var progressBar = document.createElement("div");
+    progressBar.className = "progress-bar";
+
+    var largura = quantidade + "%";
+    progressBar.style.width = largura;
+
+    var progressText = document.createElement("div");
+    progressText.className = "progress-text";
+    progressText.textContent = quantidade;
+
+    progressBarContainer.appendChild(progressBar);
+    progressBarContainer.appendChild(progressText);
+
+    container.appendChild(progressBarContainer);
   }
 
+  var produtos = [
+    { quantidade: 50 },
+    { quantidade: 30 },
+    { quantidade: 80 }
+];
+
+var progressBarsContainer = document.getElementById("box-progress-bar");
+
+produtos.forEach(function(produto) {
+  updateProgressBar(progressBarsContainer, produto.quantidade);
 });
