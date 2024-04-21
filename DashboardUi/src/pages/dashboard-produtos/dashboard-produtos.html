@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="dashboard-produtos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/
+  bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <title>Produtos</title>
+</head>
+
+<body>
+    
+    <section class="main">
+
+        <div class="sidebar">
+          <div class="user">
+            <img src="../../assets/images-home/logoSi.png" alt="" width="80px">
+            <h3>Jose Kayky</h3>
+          </div>
+    
+    
+          <a href="#"><img src="../../assets/images-dashboard-home/grid.svg" alt="" width="18px"> Dashboard</a>
+          <a class="sidebar-active" href="#"><img src="../../assets/images-dashboard-home/box archive.svg" alt="" width="18px"> Produtos</a>
+          <a href="#"><img src="../../assets/images-dashboard-home/user.svg" alt="" width="18px"> Perfil</a>
+          <a href="#"><img src="../../assets/images-dashboard-home/gear.svg" alt="" width="18px"> Configurações</a>
+        </div>
+
+        <div class="content">
+            <div class="graph-boxes">
+
+                <div class="box-area">
+                    <h2>Preço total dos Itens</h2>
+
+                    <div class="chart-box01">
+                        <canvas id="graph01"></canvas>
+                    </div>
+                    
+                </div>
+                <div class="box-donut">
+                    <h2>Quantidade de produto por categoria</h2>
+
+                    <div class="chart-box02">
+                        <canvas id="graph02"></canvas>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="container">
+                <div class="header">
+                  <span>Movimentação</span>
+                  <button onclick="openModal()" id="new">Incluir</i></button>
+                </div>
+            
+                <div class="divTable">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>CATEGORIA</th>
+                        <th>PRODUTO</th>
+                        <th>VALOR</th>
+                        <th>QUANTIDADE</th>
+                        <th class="acao">Editar</th>
+                        <th class="acao">Excluir</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+            
+                <div class="modal-container">
+                  <div class="modal">
+                    <form>
+                      <label for="m-categoria">Categoria</label>
+                      <input id="m-categoria" type="text" required />
+              
+                      <label for="m-produto">Produto</label>
+                      <input id="m-produto" type="text" required />
+              
+                      <label for="m-valor">Valor</label>
+                      <input id="m-valor" type="number" required />
+
+                      <label for="m-quantidade">Quantidade</label>
+                      <input id="m-quantidade" type="number" required />
+                      <button id="btnSalvar">Salvar</button>
+                    </form>
+                  </div>
+                </div>
+        </div>
+            
+
+    </section>
+
+    <script src="dashboard-produtos.js"></script>
+
+</body>
+</html>
