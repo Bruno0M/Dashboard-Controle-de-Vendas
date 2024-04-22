@@ -50,7 +50,9 @@ namespace DashboardAPI.Services.ProductService
                 ProductModel productModel = new ProductModel()
                 {
                     Name = product.Name,
+                    Categoria = product.Categoria,
                     Price = product.Price,
+                    Quantidade= product.Quantidade,
                     UserId = id,
                 };
 
