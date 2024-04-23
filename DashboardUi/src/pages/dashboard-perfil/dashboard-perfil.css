@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     font-family: 'Inter', sans-serif;
     height: 100vh;
@@ -16,72 +9,6 @@ body {
 
 ul {
     list-style-type: none;
-}
-
-.main{
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
-    overflow: hidden;
-}
-.sidebar .user{
-    margin: 20% 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sidebar .user h3{
-    color: white;
-    font-weight: 500;
-}
-
-.sidebar .user img{
-    border-radius: 100%;
-}
-
-.sidebar{
-    width: 15%;
-    top: 0;
-    left: 0;
-    padding: 0 8px;
-    background-color: #363636;
-    height: 100%; 
-}
-
-.sidebar a.sidebar-active{
-    background-color: #167C20;
-    color: white;
-    font-weight: bold;
-    border-radius: 13px;
-}
-
-.sidebar a.sidebar-active > img{
-    color: white;
-}
-
-.sidebar a{
-    display: block;
-    text-decoration: none;
-    margin-top: 8px;
-    padding: 10px 15px;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.sidebar a > img{
-    color: white;
-    margin-right: 10px;
-    float: inline-start;
-}
-
-.sidebar a:hover{
-    background-color: #167C20;
-    color: white;
-    font-weight: bold;
-    border-radius: 13px;
-    transition: 0.5s;
 }
 
 .container {
@@ -113,7 +40,7 @@ ul {
     cursor: pointer;
 }
 
-.title h2{
+.title h2 {
     font-size: 15px;
     margin-bottom: 20px;
     margin-top: 20px;

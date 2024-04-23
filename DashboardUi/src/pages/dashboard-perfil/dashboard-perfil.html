@@ -1,57 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina de Perfil</title>
+    <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="dashboard-perfil.css">
 </head>
+
 <body>
     <section class="main">
-          <div class="sidebar">
+        <div class="sidebar">
             <div class="user">
-              <img src="../../assets/images_home/logoSi.png" alt="" width="80px">
+              <img src="../../assets/images-home/logoSi.png" alt="" width="80px">
               <h3>Jose Kayky</h3>
             </div>
       
       
-            <a href="../dashboard-home/dashboard-home.html"><img src="../../assets/images_main/grid.svg" alt="" width="18px"> Dashboard</a>
-            <a href="../dashboard-produtos/dashboard-produtos.html"><img src="../../assets/images_main/box archive.svg" alt="" width="18px"> Produtos</a>
-            <a class="sidebar-active" href="../dashboard-perfil/dashboard-perfil.html"><img src="../../assets/images_main/user.svg" alt="" width="18px"> Perfil</a>
+            <a class="sidebar-active" href="#"><img src="../../assets/images_main/grid.svg" alt="" width="18px"> Dashboard</a>
+            <a href="#"><img src="../../assets/images_main/box archive.svg" alt="" width="18px"> Produtos</a>
+            <a href="#"><img src="../../assets/images_main/user.svg" alt="" width="18px"> Perfil</a>
             <a href="#"><img src="../../assets/images_main/gear.svg" alt="" width="18px"> Configurações</a>
           </div>
 
-    <div class="container">
-        <div class="circle">
-            <button>Editar foto de perfil</button>
-        </div>
-        <h1>Usuário</h1>
-        <div class="user-info">
-            <div class="section-user">
-                <div class="title">
-                    <h2>Informações de Usuário:</h2>
+        <div class="container">
+            <div class="circle">
+                <button>Editar foto de perfil</button>
+            </div>
+            <h1>Usuário</h1>
+            <div class="user-info">
+                <div class="section-user">
+                    <div class="title">
+                        <h2>Informações de Usuário:</h2>
+                    </div>
+                    <input type="text" name="Nome" placeholder="Nome">
                 </div>
-                <input type="text" name="Nome" placeholder="Nome">
+                <div class="section-user">
+                    <input type="text" name="office" placeholder="Cargo">
+                </div>
             </div>
-            <div class="section-user">
-                <input type="text" name="office" placeholder="Cargo">
+            <div class="contact-info">
+                <div class="title">
+                    <h2>Contato:</h2>
+                </div>
+                <div class="section-contact">
+                    <input type="text" name="email" placeholder="Email">
+                </div>
+                <div class="section-contact">
+                    <input type="text" name="email" placeholder="Número">
+                </div>
+                <div class="section-contact">
+                    <input type="text" name="email" placeholder="Links">
+                </div>
             </div>
         </div>
-        <div class="contact-info">
-            <div class="title">
-                <h2>Contato:</h2>
-            </div>
-            <div class="section-contact">
-                <input type="text" name="email" placeholder="Email">
-            </div>
-            <div class="section-contact">
-                <input type="text" name="email" placeholder="Número">
-            </div>
-            <div class="section-contact">
-                <input type="text" name="email" placeholder="Links">
-            </div>
-        </div>
-    </div>
-</section>  
+    </section>
 </body>
+
 </html>

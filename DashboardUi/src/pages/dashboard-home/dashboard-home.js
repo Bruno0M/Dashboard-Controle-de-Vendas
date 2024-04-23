@@ -102,7 +102,10 @@ const donut01 = document.getElementById('graph03');
   var produtos = [
     { quantidade: 50 },
     { quantidade: 30 },
-    { quantidade: 80 }
+    { quantidade: 64 },
+    { quantidade: 98 },
+    { quantidade: 11 },
+    { quantidade: 32 }
 ];
 
 var progressBarsContainer = document.getElementById("box-progress-bar");
