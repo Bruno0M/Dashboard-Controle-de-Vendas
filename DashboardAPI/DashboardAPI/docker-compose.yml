@@ -2,8 +2,8 @@ services:
     dashboard-api:
         container_name: dashboard-api
         build:
-            dockerfile: DashboardAPI/Dockerfile
             context: .
+            dockerfile: ./Dockerfile
         ports:
             - 4652:8080
         environment:
