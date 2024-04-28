@@ -1,3 +1,12 @@
+const CHART_COLORS = {
+  cat1: 'rgb(5, 67, 109)',
+  cat2: 'rgb(5, 91, 149)',
+  cat3: 'rgb(42, 112, 160)',
+  cat4: 'rgb(39, 150, 225)',
+  cat5: 'rgb(9, 184, 242)',
+  cat6: 'rgb(130, 196, 241)',
+  cat7: 'rgb(194, 227, 249)'
+};
 
 const bar01 = document.getElementById('graph01');
 
@@ -9,12 +18,12 @@ const bar01 = document.getElementById('graph01');
         {
           label: 'Dataset 1',
           data: [1000, 2000, 3000, 4000],
-          backgroundColor: 'rgba(255, 99, 132, 0.6)',
+          backgroundColor: 'rgba(21, 94, 147, 0.8 )',
         },
         {
           label: 'Dataset 2',
           data: [1200, 1300, 1400, 1500],
-          backgroundColor: 'rgba(54, 162, 235, 0.6)',
+          backgroundColor: 'rgba(91, 213, 88, 0.8 )',
         },
       ]
     },
@@ -38,7 +47,8 @@ const bar02 = document.getElementById('graph02');
       datasets: [{
         label: '# of Votes',
         data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
+        borderWidth: 1,
+        backgroundColor: 'rgba(201, 160, 62, 0.8)',
       }]
     },
     options: {
@@ -55,12 +65,13 @@ const donut01 = document.getElementById('graph03');
   new Chart(donut01, {
     type: 'doughnut',
     data: {
-      labels: ['Categoria A', 'Categoria B', 'Categoria C'],
+      labels: ['Categoria A', 'Categoria B', 'Categoria C', 'D', 'E', 'F', 'G'],
 
       datasets: [{
         label: '# of Votes',
-        data: [30, 19, 3, 5, ],
-        borderWidth: 1
+        data: [10, 10, 10, 10, 10, 10, 10],
+        borderWidth: 1,
+        backgroundColor: Object.values(CHART_COLORS),
       }],
       options: {
         responsive: true,

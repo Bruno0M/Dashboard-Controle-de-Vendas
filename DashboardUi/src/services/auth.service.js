@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if(!response.ok) throw new Error(response.statusText());
         return response;
       })
-      .then(js)
+      .then(json => console.log(json))
+      .catch(err => console.log(err));
 
     });
 

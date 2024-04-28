@@ -1,3 +1,13 @@
+const CHART_COLORS = {
+  cat1: 'rgb(5, 67, 109)',
+  cat2: 'rgb(5, 91, 149)',
+  cat3: 'rgb(42, 112, 160)',
+  cat4: 'rgb(39, 150, 225)',
+  cat5: 'rgb(9, 184, 242)',
+  cat6: 'rgb(130, 196, 241)',
+  cat7: 'rgb(194, 227, 249)'
+};
+
 const line01 = document.getElementById('graph01');
 
 new Chart(line01, {
@@ -39,7 +49,8 @@ new Chart(donut01, {
       datasets: [{
         label: '# of Votes',
         data: [30, 19, 3, 5, ],
-        borderWidth: 1
+        borderWidth: 1,
+        backgroundColor: Object.values(CHART_COLORS),
       }],
       options: {
         responsive: true,
