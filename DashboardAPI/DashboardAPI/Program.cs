@@ -35,7 +35,7 @@ namespace DashboardAPI
             builder.Services.AddTransient<IValidator<ProductDto>, ProductValidator>();
 
 
-            builder.Services.AddScoped<IUserInterface, UserService>();
+            builder.Services.AddScoped<IAuthInterface, AuthService>();
             builder.Services.AddTransient<ITokenInterface, TokenService>();
             builder.Services.AddScoped<IProductInterface, ProductService>();
 

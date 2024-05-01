@@ -9,11 +9,11 @@ using System.Text;
 
 namespace DashboardAPI.Services.UserService
 {
-    public class UserService : IUserInterface
+    public class AuthService : IAuthInterface
     {
         private readonly DashboardContext _context;
         private readonly ITokenInterface _tokenInterface;
-        public UserService(DashboardContext context, ITokenInterface tokenInterface)
+        public AuthService(DashboardContext context, ITokenInterface tokenInterface)
         {
             _context = context;
             _tokenInterface = tokenInterface;

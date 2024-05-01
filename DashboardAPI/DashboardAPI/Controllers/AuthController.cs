@@ -11,19 +11,19 @@ namespace DashboardAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class AuthController : ControllerBase
     {
-        private readonly IUserInterface _userInterface;
+        private readonly IAuthInterface _userInterface;
         private readonly IValidator<UserLoginDto> _loginValidator;
         private readonly IValidator<UserCreationDto> _registerValidator;
-        public UserController(IUserInterface userInterface, IValidator<UserLoginDto> loginValidator, IValidator<UserCreationDto> registerValidator)
+        public AuthController(IAuthInterface userInterface, IValidator<UserLoginDto> loginValidator, IValidator<UserCreationDto> registerValidator)
         {
             _userInterface = userInterface;
             _loginValidator = loginValidator;
             _registerValidator = registerValidator;
         }
 
-        [HttpPost("RegisterUser")] 
+        [HttpPost("Register")] 
         public async Task<IActionResult> Register([FromBody]UserCreationDto userCreationDto)
         {
             ValidationResult validatorResult = await _registerValidator.ValidateAsync(userCreationDto);
@@ -44,7 +44,7 @@ namespace DashboardAPI.Controllers
             return Ok(response);
         }
 
-        [HttpPost("LoginUser")]
+        [HttpPost("Login")]
         [Consumes("application/json")]
         public async Task<IActionResult> Login([FromBody]UserLoginDto user)
         {
