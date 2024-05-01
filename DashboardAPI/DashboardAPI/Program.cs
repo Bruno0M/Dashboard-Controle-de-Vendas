@@ -30,14 +30,15 @@ namespace DashboardAPI
             builder.Services.AddSwaggerGen();
 
             //Fluent Validation
-            builder.Services.AddTransient<IValidator<UserLoginDto>, UserLoginValidator>();
-            builder.Services.AddTransient<IValidator<UserCreationDto>, UserCreationValidator>();
+            builder.Services.AddTransient<IValidator<AuthLoginDto>, UserLoginValidator>();
+            builder.Services.AddTransient<IValidator<AuthCreationDto>, UserCreationValidator>();
             builder.Services.AddTransient<IValidator<ProductDto>, ProductValidator>();
 
 
             builder.Services.AddScoped<IAuthInterface, AuthService>();
             builder.Services.AddTransient<ITokenInterface, TokenService>();
             builder.Services.AddScoped<IProductInterface, ProductService>();
+            builder.Services.AddScoped<IUserInterface, UserService>();
 
 
             builder.Services.AddDbContext<DashboardContext>(options =>

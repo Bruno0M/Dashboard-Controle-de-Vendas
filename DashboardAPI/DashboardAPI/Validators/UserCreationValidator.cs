@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace DashboardAPI.Validators
 {
-    public class UserCreationValidator : AbstractValidator<UserCreationDto>
+    public class UserCreationValidator : AbstractValidator<AuthCreationDto>
     {
         public UserCreationValidator()
         {

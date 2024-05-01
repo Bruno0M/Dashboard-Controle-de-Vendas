@@ -19,7 +19,7 @@ namespace DashboardAPI.Services.UserService
             _tokenInterface = tokenInterface;
         }
 
-        public async Task<Response<object>> Login(UserLoginDto user)
+        public async Task<Response<object>> Login(AuthLoginDto user)
         {
             var response = new Response<object>();
 
@@ -59,9 +59,9 @@ namespace DashboardAPI.Services.UserService
             return response;
         }
 
-        public async Task<Response<UserCreationDto>> UserCreation(UserCreationDto userCreationDto)
+        public async Task<Response<AuthCreationDto>> UserCreation(AuthCreationDto userCreationDto)
         {
-            Response<UserCreationDto> response = new Response<UserCreationDto>();
+            Response<AuthCreationDto> response = new Response<AuthCreationDto>();
 
             try
             {
@@ -115,7 +115,7 @@ namespace DashboardAPI.Services.UserService
             }
         }
 
-        private bool VerifyUserAndEmailExist(UserCreationDto userCreationDto)
+        private bool VerifyUserAndEmailExist(AuthCreationDto userCreationDto)
         {
             var user = _context.Users.FirstOrDefault(userData => userData.Email == userCreationDto.Email);
 

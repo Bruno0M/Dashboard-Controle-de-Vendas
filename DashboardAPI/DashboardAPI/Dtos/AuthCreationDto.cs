@@ -1,6 +1,6 @@
 ﻿namespace DashboardAPI.Dto
 {
-    public class UserCreationDto
+    public class AuthCreationDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

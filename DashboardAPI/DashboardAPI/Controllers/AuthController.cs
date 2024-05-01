@@ -14,9 +14,9 @@ namespace DashboardAPI.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthInterface _userInterface;
-        private readonly IValidator<UserLoginDto> _loginValidator;
-        private readonly IValidator<UserCreationDto> _registerValidator;
-        public AuthController(IAuthInterface userInterface, IValidator<UserLoginDto> loginValidator, IValidator<UserCreationDto> registerValidator)
+        private readonly IValidator<AuthLoginDto> _loginValidator;
+        private readonly IValidator<AuthCreationDto> _registerValidator;
+        public AuthController(IAuthInterface userInterface, IValidator<AuthLoginDto> loginValidator, IValidator<AuthCreationDto> registerValidator)
         {
             _userInterface = userInterface;
             _loginValidator = loginValidator;
@@ -24,7 +24,7 @@ namespace DashboardAPI.Controllers
         }
 
         [HttpPost("Register")] 
-        public async Task<IActionResult> Register([FromBody]UserCreationDto userCreationDto)
+        public async Task<IActionResult> Register([FromBody]AuthCreationDto userCreationDto)
         {
             ValidationResult validatorResult = await _registerValidator.ValidateAsync(userCreationDto);
 
@@ -46,7 +46,7 @@ namespace DashboardAPI.Controllers
 
         [HttpPost("Login")]
         [Consumes("application/json")]
-        public async Task<IActionResult> Login([FromBody]UserLoginDto user)
+        public async Task<IActionResult> Login([FromBody]AuthLoginDto user)
         {
             ValidationResult validatorResult = await _loginValidator.ValidateAsync(user);
 
