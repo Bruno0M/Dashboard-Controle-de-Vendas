@@ -20,19 +20,19 @@ body {
     overflow: hidden;
 }
 
-.sidebar .user {
+.sidebar #user {
     margin: 20% 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.sidebar .user h3 {
+.sidebar #user h3 {
     color: white;
     font-weight: 500;
 }
 
-.sidebar .user img {
+.sidebar #user img {
     border-radius: 100%;
 }
 
