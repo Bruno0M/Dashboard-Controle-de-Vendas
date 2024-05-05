@@ -1,7 +1,9 @@
 import { environment } from "../environments/environments.js";
+import { isAuthenticated } from "../middlewares/auth.middleware.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-  const apiUrl = `${environment.ApiUrl}/User`
+  if (isAuthenticated()) window.location.href = "../dashboard-home/dashboard-home.html";
+  const apiUrl = `${environment.ApiUrl}/Auth`
 
   document.getElementById("form-register").addEventListener("submit", function (event) {
     event.preventDefault();
@@ -26,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       headers: { "Content-type": "application/json; charset=UTF-8" }
     }
 
-    fetch(`${apiUrl}/RegisterUser`, options)
+    fetch(`${apiUrl}/Register`, options)
       .then(response => {
         if(!response.ok) throw new Error(response.statusText());
         return response;
@@ -53,12 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
       headers: { "Content-type": "application/json; charset=UTF-8" }
     }
 
-    fetch(`${apiUrl}/LoginUser`, options)
+    fetch(`${apiUrl}/Login`, options)
       .then(response => {
         if(!response.ok) throw new Error(response.statusText());
-        return response;
+        return response.json();
       })
-      .then(json => console.log(json))
+      .then(resToken => {
+        localStorage.setItem('token', resToken.data.token);
+        window.location.href = "../dashboard-home/dashboard-home.html"
+      })
       .catch(err => console.log(err));
 
   });
