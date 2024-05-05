@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const apiUrl = environment.ApiUrl
 
 
-    var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIyMDAyIiwiZW1haWwiOiJzdHJpbmcyQGdtYWlsLmNvbSIsIm5iZiI6MTcxNDU4ODc3MywiZXhwIjoxNzE0NTg4ODkzLCJpYXQiOjE3MTQ1ODg3NzN9.inrvNkH4HKeEvy1_z3uU8KROp85txdZUmn02eKK0hjA"
+    var token = localStorage.getItem('token');
 
     var options = {
         method: "GET",
