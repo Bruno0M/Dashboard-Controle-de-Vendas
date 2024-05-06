@@ -1,9 +1,17 @@
 name: Build Backend CI
 
 on:
+  workflow_dispatch:
+    inputs:
+      refToBuild:
+        description: 'Branch, tag or commit SHA1 to build'
+        required: true
+        type: string
   push:
     branches:
       - main
+    paths:
+      - '../DashboardAPI'
       
 jobs:
   build:
@@ -21,7 +29,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5.3.0
         with:
-          context: DashboardAPI/DashboardAPI/DashboardAPI
-          file: DashboardAPI/DashboardAPI/DashboardAPI/Dockerfile
+          context: DashboardAPI/
+          file: DashboardAPI/Dockerfile
           push: true
           tags: bruno0m/dashboard-api:latest
