@@ -2,7 +2,7 @@ import { environment } from "../environments/environments.js";
 import { isAuthenticated } from "../middlewares/auth.middleware.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (isAuthenticated()) window.location.href = "../dashboard-home/dashboard-home.html";
+  if (isAuthenticated()) window.location.href = "/pages/dashboard-home/";
   const apiUrl = `${environment.ApiUrl}/Auth`
 
   document.getElementById("form-register").addEventListener("submit", function (event) {
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then(resToken => {
         localStorage.setItem('token', resToken.data.token);
-        window.location.href = "../dashboard-home/dashboard-home.html"
+        window.location.href = "/pages/dashboard-home/"
       })
       .catch(err => console.log(err));
 
