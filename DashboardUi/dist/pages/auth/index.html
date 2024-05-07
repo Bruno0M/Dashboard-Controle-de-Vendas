@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <script type="module" crossorigin src="/assets/auth-BP2_41xu.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/assets/environments-D9GokKY9.js">
+  <link rel="modulepreload" crossorigin href="/assets/auth.middleware-D_thMPjX.js">
+  <link rel="stylesheet" crossorigin href="/assets/auth-C9RDm2TL.css">
+</head>
+
+<body>
+  <div class="container" id="container">
+    <div class="form-container sign-up">
+      <form id="form-register">
+        <h1>Crie sua conta</h1>
+        <input id="firstName" type="text" placeholder="Primeiro Nome">
+        <input id="lastName" type="text" placeholder="Segundo Nome">
+        <input id="email" type="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Senha">
+        <input id="confirmPassword" type="password" placeholder="Confirme a Senha">
+        <button>REGISTRAR</button>
+      </form>
+    </div>
+    <div class="form-container sign-in">
+      <form id="form-login">
+        <h1>Entre na sua conta</h1>
+        <input id="emailLogin" type="email" placeholder="Email">
+        <input id="passwordLogin" type="password" placeholder="Senha">
+        <button>LOGAR</button>
+      </form>
+    </div>
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1>Bem vindo de volta</h1>
+          <p>Entre na sua conta para acessar nosso site!</p>
+          <button class="hidden" id="login">LOGAR</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Olá, Amigo!</h1>
+          <p>Registre sua conta para acessar nosso site!</p>
+          <button class="hidden" id="register">Registrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
