@@ -1,6 +1,10 @@
 import { devEnvironment, environment } from "../environments/environments.js";
+import { isAuthenticated } from "../middlewares/auth.middleware.js";
+
 
 document.addEventListener("DOMContentLoaded", function () {
+  if (!isAuthenticated()) window.location.href = "/pages/auth/";
+
   const apiUrl = `${environment.ApiUrl}/Product`
 
   var token = localStorage.getItem('token');

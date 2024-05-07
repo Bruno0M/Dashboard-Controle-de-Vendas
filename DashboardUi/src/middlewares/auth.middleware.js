@@ -11,7 +11,7 @@ export function isAuthenticated() {
 
   if (currentTime >= tokenExpirationTime) {
     localStorage.removeItem('token');
-    window.location.href = "/auth/";
+    window.location.href = "/pages/auth/";
     return false;
   }
   

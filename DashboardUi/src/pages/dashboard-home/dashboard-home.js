@@ -1,6 +1,6 @@
 import { isAuthenticated } from "../../middlewares/auth.middleware";
 
-if (!isAuthenticated()) window.location.href = "/auth/";
+if (!isAuthenticated()) window.location.href = "/pages/auth/";
 
 const CHART_COLORS = {
   cat1: 'rgb(5, 67, 109)',
