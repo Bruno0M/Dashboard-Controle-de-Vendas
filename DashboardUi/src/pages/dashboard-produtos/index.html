@@ -12,6 +12,7 @@
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="module" src="../../services/user-services.js"></script>
+  <script type="module" src="../../services/product-service.js"></script>
 
   <title>Produtos</title>
 </head>
@@ -75,14 +76,13 @@
                 <th class="acao">Excluir</th>
               </tr>
             </thead>
-            <tbody>
-            </tbody>
+            <tbody id="product-rows"></tbody>
           </table>
         </div>
 
         <div class="modal-container">
           <div class="modal">
-            <form>
+            <form id="form-modal-product">
               <label for="m-categoria">Categoria</label>
               <input id="m-categoria" type="text" required />
 

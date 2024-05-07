@@ -1,4 +1,4 @@
-import { environment } from "../environments/environments.js";
+import { devEnvironment, environment } from "../environments/environments.js";
 import { isAuthenticated } from "../middlewares/auth.middleware.js";
 
 document.addEventListener("DOMContentLoaded", function () {
