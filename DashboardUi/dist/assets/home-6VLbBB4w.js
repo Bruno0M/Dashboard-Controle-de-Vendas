@@ -1,1 +1,0 @@
-import"./modulepreload-polyfill-B5Qt9EMX.js";document.addEventListener("DOMContentLoaded",function(t){t.preventDefault(),document.getElementById("btn-register").addEventListener("click",()=>{window.location.href="../auth/auth.html?active=true"})});
