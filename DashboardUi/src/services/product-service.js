@@ -9,9 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var token = localStorage.getItem('token');
 
-  document.getElementById("form-modal-product").addEventListener("submit", function (event) {
+  document.getElementById("btnSalvar").addEventListener("click", function (event) {
     event.preventDefault();
 
+    
     var categoria = document.getElementById("m-categoria").value;
     var produto = document.getElementById("m-produto").value;
     var valor = document.getElementById("m-valor").value;
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!response.ok) throw new Error(response.statusText());
         return response;
       })
+      
       .then(json => console.log(json))
       .catch(err => console.log(err));
 
@@ -58,14 +60,13 @@ document.addEventListener("DOMContentLoaded", function () {
       return response.json()
     })
     .then(data => displayProducts(data))
-    .then(json => console.log(json))
 });
 
 function insertItem(product) {
   return `
     <tr>
-    <td>${product.name}</td>
     <td>${product.categoria}</td>
+    <td>${product.name}</td>
     <td>R$ ${product.price}</td>
     <td>${product.quantidade}</td>
     </tr>`;
