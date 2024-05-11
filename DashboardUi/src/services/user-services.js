@@ -1,4 +1,4 @@
-import { environment } from "../environments/environments.js";
+import { devEnvironment, environment } from "../environments/environments.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const apiUrl = environment.ApiUrl
@@ -27,5 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 var name = document.getElementById("user");
                 name.appendChild(h3);
             });
+    
 
 });
+
+document.getElementById("btnLogout").addEventListener('click', function(){
+    localStorage.removeItem('token');
+    window.location.href = '/pages/auth/index.html';
+});
+
