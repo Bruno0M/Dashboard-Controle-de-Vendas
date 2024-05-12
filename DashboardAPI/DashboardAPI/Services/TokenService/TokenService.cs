@@ -25,7 +25,7 @@ namespace DashboardAPI.Services.TokenService
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = GenerateClaims(user),
-                Expires = DateTime.UtcNow.AddMinutes(2), //Apenas para teste, depois fazer a devida alteração
+                Expires = DateTime.UtcNow.AddMinutes(50),
                 SigningCredentials = credentials,
             };
 
