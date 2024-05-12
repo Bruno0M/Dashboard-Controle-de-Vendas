@@ -10,6 +10,8 @@ using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 
 namespace DashboardAPI
@@ -51,6 +53,19 @@ namespace DashboardAPI
                             maxRetryDelay: TimeSpan.FromSeconds(5),
                             errorNumbersToAdd: null);
                     });
+            });
+
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                {
+                    Description = "Using the Bearer scheme (\"bearer {token}\")",
+                    In = ParameterLocation.Header,
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey
+                });
+
+                options.OperationFilter<SecurityRequirementsOperationFilter>();
             });
 
             builder.Services.AddAuthentication(x =>
