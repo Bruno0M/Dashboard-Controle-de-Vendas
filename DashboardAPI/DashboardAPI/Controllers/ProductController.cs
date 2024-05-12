@@ -37,5 +37,15 @@ namespace DashboardAPI.Controllers
             var response = await _product.GetProductsByUserId(userId);
             return Ok(response);
         }
+
+        [Authorize]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteProductById(int id)
+        {
+            var userId = UserUtils.GetCurrentUserId(User);
+
+            var response = await _product.DeleteProductById(userId, id);
+            return Ok(response);
+        }
     }
 }
