@@ -24,6 +24,7 @@ namespace DashboardAPI.Services.ProductService
 
                 var productDtos = products.Select(p => new ProductDto
                 {
+                    Id = p.Id,
                     Name = p.Name,
                     Price = p.Price,
                     Categoria = p.Categoria,
@@ -59,14 +60,36 @@ namespace DashboardAPI.Services.ProductService
                 _context.Add(productModel);
                 await _context.SaveChangesAsync();
 
+                response.Data = product;
                 response.Message = "Product registered";
-                response.Status = HttpStatusCode.OK;
+                response.Status = HttpStatusCode.Created;
             }
             catch (Exception ex)
             {
                 response.Message = ex.Message;
             }
 
+            return response;
+        }
+
+        public async Task<Response<ProductDto>> DeleteProductById(int userId, int id)
+        {
+            var response = new Response<ProductDto>();
+            try
+            {
+                var product = await _context.
+                    Products.FirstOrDefaultAsync(x => x.UserId == userId && x.Id == id);
+
+                _context.Remove(product);
+                await _context.SaveChangesAsync();
+
+                response.Message = "Product deleted!";
+                response.Status = HttpStatusCode.NoContent;
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+            }
             return response;
         }
     }
