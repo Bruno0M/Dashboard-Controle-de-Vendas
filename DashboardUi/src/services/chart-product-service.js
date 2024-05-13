@@ -16,38 +16,8 @@ const CHART_COLORS = {
 
 const line01 = document.getElementById('graph01');
 
-new Chart(line01, {
-    type: 'line',
-    data: {
-        labels: ['Mes1', 'Mes2', 'Mes3', 'Mes4'],
-        datasets: [
-            {
-                label: 'Dataset',
-                data: [1500, 1000, 1800, 300],
-                borderColor: 'red',
-                backgroundColor: 'rgba(255, 0, 0, 0.2)',
-                fill: true
-            }
-        ],
-    },
-    options: {
-        plugins: {
-            filler: {
-                propagate: false,
-            },
-            title: {
-                display: true,
-            }
-        },
-        interaction: {
-            intersect: false,
-        },
-    },
-});
-
 const donut01 = document.getElementById('graph02');
 
-var teste = "nicoboco"
 
 var options = {
     method: "GET",
@@ -77,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            const categorias = Object.keys(categoriasQuantidades); 
+            const categorias = Object.keys(categoriasQuantidades);
             const quantidades = Object.values(categoriasQuantidades);
 
             console.log(quantidades)
@@ -107,6 +77,44 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             });
+
+            const quant = data.data.map(item => item.quantidade);
+            const precos = data.data.map(item => item.price);
+
+            function total(quant, precos) {
+                return quant * precos;
+            }
+
+            const totais = quant.map((quantidade, index) => total(quantidade, precos[index]));
+
+            new Chart(line01, {
+                type: 'line',
+                data: {
+                    labels: ['Mes1', 'Mes2', 'Mes3', 'Mes4'],
+                    datasets: [
+                        {
+                            label: 'Dataset',
+                            data: totais,
+                            borderColor: 'red',
+                            backgroundColor: 'rgba(255, 0, 0, 0.2)',
+                            fill: true
+                        }
+                    ],
+                },
+                options: {
+                    plugins: {
+                        filler: {
+                            propagate: false,
+                        },
+                        title: {
+                            display: true,
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                    },
+                },
+            })
 
         })
 });
