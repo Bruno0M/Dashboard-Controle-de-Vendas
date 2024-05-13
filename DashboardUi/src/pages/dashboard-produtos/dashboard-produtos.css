@@ -87,8 +87,8 @@ button {
 .divTable {
   padding: 10px;
   width: auto; 
-  height:inherit; 
-  overflow:auto;
+  height: 90%; 
+  overflow: auto;
 }
 
 .divTable::-webkit-scrollbar {
