@@ -31,10 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(`${apiUrl}/Register`, options)
       .then(response => {
         if(!response.ok) throw new Error(response.statusText());
-        return response;
+        return response.json();
       })
-      .then(json => console.log(json))
-      .catch(err => console.log(err));
+      alert('Usuário registrado com sucesso!')
 
     });
 

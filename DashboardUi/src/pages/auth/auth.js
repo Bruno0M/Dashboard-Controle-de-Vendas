@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     event.preventDefault();
 
+    const preLoad = document.getElementById('button-preLoad')
     const container = document.getElementById('container');
     const registerBtn = document.getElementById('register');
     const loginBtn = document.getElementById('login');
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     registerBtn.addEventListener('click', () => {
         container.classList.add("active");
+
     });
 
     loginBtn.addEventListener('click', () => {
@@ -18,4 +20,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (adicionarClasseActive === 'true') {
         container.classList.add('active');
     }
+
+    preLoad.addEventListener('click', () => {
+        preLoad.classList.add('loading');
+
+        setTimeout(() => {
+            preLoad.classList.remove('loading')
+        }, 1800)
+    });
+
 });
