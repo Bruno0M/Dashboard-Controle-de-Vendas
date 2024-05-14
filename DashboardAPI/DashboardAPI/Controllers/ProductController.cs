@@ -29,6 +29,16 @@ namespace DashboardAPI.Controllers
         }
 
         [Authorize]
+        [HttpPost("ReportSale")]
+        public async Task<IActionResult> ReportSale([FromBody] SaleQuantityDto quantity)
+        {
+            var userId = UserUtils.GetCurrentUserId(User);
+
+            var response = await _product.ReportSale(quantity, userId);
+            return Ok(response);
+        }
+
+        [Authorize]
         [HttpGet]   
         public async Task<IActionResult> GetProductById()
         {
@@ -40,11 +50,11 @@ namespace DashboardAPI.Controllers
 
         [Authorize]
         [HttpDelete]
-        public async Task<IActionResult> DeleteProductById(int id)
+        public async Task<IActionResult> DeleteProductById(int productID)
         {
             var userId = UserUtils.GetCurrentUserId(User);
 
-            var response = await _product.DeleteProductById(userId, id);
+            var response = await _product.DeleteProductById(userId, productID);
             return Ok(response);
         }
     }

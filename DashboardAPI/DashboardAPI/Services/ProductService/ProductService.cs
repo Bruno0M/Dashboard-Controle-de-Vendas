@@ -72,13 +72,38 @@ namespace DashboardAPI.Services.ProductService
             return response;
         }
 
-        public async Task<Response<ProductDto>> DeleteProductById(int userId, int id)
+        public async Task<Response<ProductDto>> ReportSale(SaleQuantityDto quantity, int userId)
+        {
+            var response = new Response<ProductDto>();
+
+            var product = await _context.Products.Where(p => p.Id == quantity.Id && p.UserId == userId).FirstOrDefaultAsync();
+
+            if(product != null)
+            {
+                if(product.Quantidade < quantity.Quantidade)
+                {
+                    response.Data = null;
+                    response.Message = "Invalid quantity";
+                    return response;
+                }
+
+                product.Quantidade -= quantity.Quantidade;
+                await _context.SaveChangesAsync();
+
+                response.Data = null;
+                response.Message = "Successful sale";
+            }
+
+            return response;
+        }
+
+        public async Task<Response<ProductDto>> DeleteProductById(int userId, int productID)
         {
             var response = new Response<ProductDto>();
             try
             {
                 var product = await _context.
-                    Products.FirstOrDefaultAsync(x => x.UserId == userId && x.Id == id);
+                    Products.FirstOrDefaultAsync(x => x.UserId == userId && x.Id == productID);
 
                 _context.Remove(product);
                 await _context.SaveChangesAsync();
