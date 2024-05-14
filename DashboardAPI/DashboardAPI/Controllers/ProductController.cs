@@ -20,7 +20,7 @@ namespace DashboardAPI.Controllers
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> Product([FromBody] ProductDto product)
+        public async Task<IActionResult> CreateProduct([FromBody] ProductDto product)
         {
             var userId = UserUtils.GetCurrentUserId(User);
 
