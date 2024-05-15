@@ -1,6 +1,7 @@
 ﻿using DashboardAPI.Data.Context;
 using DashboardAPI.Dtos;
 using DashboardAPI.Models;
+using DashboardAPI.Services.SalesHistoryService;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 
@@ -9,9 +10,11 @@ namespace DashboardAPI.Services.ProductService
     public class ProductService : IProductInterface
     {
         private readonly DashboardContext _context;
-        public ProductService(DashboardContext context)
+        private readonly ISalesHistoryInterface _salesHistory;
+        public ProductService(DashboardContext context, ISalesHistoryInterface salesHistory)
         {
             _context = context;
+            _salesHistory = salesHistory;
         }
 
         public async Task<Response<IEnumerable<ProductDto>>> GetProductsByUserId(int id)
@@ -42,7 +45,7 @@ namespace DashboardAPI.Services.ProductService
             return response;
         }
 
-        public async Task<Response<ProductDto>> CreateProduct(ProductDto product, int id)
+        public async Task<Response<ProductDto>> CreateProduct(ProductDto product, int userId)
         {
             var response = new Response<ProductDto>();
             try
@@ -54,7 +57,7 @@ namespace DashboardAPI.Services.ProductService
                     Categoria = product.Categoria,
                     Price = product.Price,
                     Quantidade= product.Quantidade,
-                    UserId = id,
+                    UserId = userId,
                 };
 
                 _context.Add(productModel);
@@ -89,6 +92,17 @@ namespace DashboardAPI.Services.ProductService
 
                 product.Quantidade -= quantity.Quantidade;
                 await _context.SaveChangesAsync();
+
+                SalesHistoryDto history = new SalesHistoryDto()
+                {
+                    ProductName = product.Name,
+                    AmountSale = quantity.Quantidade * product.Price,
+                    QuantityProductsSold = quantity.Quantidade,
+                    DateSale = DateTime.Now,
+                };
+
+                _salesHistory.SaveHistory(history, userId);
+
 
                 response.Data = null;
                 response.Message = "Successful sale";
