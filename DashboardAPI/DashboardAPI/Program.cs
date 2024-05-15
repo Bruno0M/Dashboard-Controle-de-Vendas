@@ -3,6 +3,7 @@ using DashboardAPI.Data.Context;
 using DashboardAPI.Dto;
 using DashboardAPI.Dtos;
 using DashboardAPI.Services.ProductService;
+using DashboardAPI.Services.SalesHistoryService;
 using DashboardAPI.Services.TokenService;
 using DashboardAPI.Services.UserService;
 using DashboardAPI.Validators;
@@ -41,6 +42,7 @@ namespace DashboardAPI
             builder.Services.AddTransient<ITokenInterface, TokenService>();
             builder.Services.AddScoped<IProductInterface, ProductService>();
             builder.Services.AddScoped<IUserInterface, UserService>();
+            builder.Services.AddScoped<ISalesHistoryInterface, SalesHistoryService>();
 
 
             builder.Services.AddDbContext<DashboardContext>(options =>

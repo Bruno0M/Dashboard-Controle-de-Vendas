@@ -27,11 +27,14 @@ namespace DashboardAPI.Data.Context
 
         public DbSet<UserModel> Users { get; set; }
         public DbSet<ProductModel> Products { get; set; }
+        public DbSet<SalesHistoryModel> SalesHistory { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserMap());
             modelBuilder.ApplyConfiguration(new ProductMap());
+            modelBuilder.ApplyConfiguration(new SalesHistoryMap());
+
             base.OnModelCreating(modelBuilder);
         }
 
