@@ -19,12 +19,17 @@ namespace DashboardAPI.Map
                 .HasColumnName("price")
                 .IsRequired();
 
-            builder.Property(x => x.Categoria)
-                .HasColumnName("categoria")
+            builder.Property(x => x.Category)
+                .HasColumnName("category")
                 .IsRequired();
 
-            builder.Property(x => x.Quantidade)
-                .HasColumnName("quantidade")
+            builder.Property(x => x.Quantity)
+                .HasColumnName("quantity")
+                .IsRequired();
+
+            builder.Property(x => x.CreationDate)
+                .HasColumnName("creation_date")
+                .HasColumnType("date")
                 .IsRequired();
         }
     }

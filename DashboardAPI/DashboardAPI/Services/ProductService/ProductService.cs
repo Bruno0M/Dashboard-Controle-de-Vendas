@@ -30,8 +30,9 @@ namespace DashboardAPI.Services.ProductService
                     Id = p.Id,
                     Name = p.Name,
                     Price = p.Price,
-                    Categoria = p.Categoria,
-                    Quantidade = p.Quantidade,
+                    Category = p.Category,
+                    Quantity = p.Quantity,
+                    CreationDate = p.CreationDate,
                 });
 
                 response.Data = productDtos;
@@ -54,9 +55,9 @@ namespace DashboardAPI.Services.ProductService
                 ProductModel productModel = new ProductModel()
                 {
                     Name = product.Name,
-                    Categoria = product.Categoria,
+                    Category = product.Category,
                     Price = product.Price,
-                    Quantidade= product.Quantidade,
+                    Quantity= product.Quantity,
                     UserId = userId,
                 };
 
@@ -83,21 +84,21 @@ namespace DashboardAPI.Services.ProductService
 
             if(product != null)
             {
-                if(product.Quantidade < quantity.Quantidade)
+                if(product.Quantity < quantity.Quantity)
                 {
                     response.Data = null;
                     response.Message = "Invalid quantity";
                     return response;
                 }
 
-                product.Quantidade -= quantity.Quantidade;
+                product.Quantity -= quantity.Quantity;
                 await _context.SaveChangesAsync();
 
                 SalesHistoryDto history = new SalesHistoryDto()
                 {
                     ProductName = product.Name,
-                    AmountSale = quantity.Quantidade * product.Price,
-                    QuantityProductsSold = quantity.Quantidade,
+                    AmountSale = quantity.Quantity * product.Price,
+                    QuantityProductsSold = quantity.Quantity,
                     DateSale = DateTime.Now,
                 };
 
