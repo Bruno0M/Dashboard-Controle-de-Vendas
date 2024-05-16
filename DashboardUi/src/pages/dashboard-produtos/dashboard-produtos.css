@@ -229,14 +229,6 @@ tbody tr td.acao {
   color: white;
 }
 
-.active {
-  display: flex;
-}
-
-.active .modal {
-  animation: modal .4s;
-}
-
 @keyframes modal {
   from {
     opacity: 0;
@@ -289,44 +281,35 @@ td button i:first-child {
 }
 
 .modal-remove {
-  /* display: none; Esconde essa bosta de modal*/
+  display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 999;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0,0,0,0.5);
   align-items: center;
+  justify-content: center;
 }
 
 .modal-content {
+  padding: 20px;
   background-color: #fefefe;
   margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
   width: 25%;
+  border: 1px solid #888;
   text-align: center;
   border-radius: 5px;
   position: relative;
 }
 
-.close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: #aaaaaa;
-  font-size: 28px;
-  font-weight: bold;
-  margin-right: 10px;
-  margin-top: 5px;
+.active {
+  display: flex;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.active .modal, .modal-content{
+  animation: modal .4s;
 }
 
 .btn-success {

@@ -1,5 +1,6 @@
 import { devEnvironment, environment } from "../environments/environments.js";
 import { isAuthenticated } from "../middlewares/auth.middleware.js";
+import { openModalInsert, openModalRemove } from "../pages/dashboard-produtos/dashboard-produtos.js"; 
 
 var token = localStorage.getItem('token');
 const apiUrl = `${environment.ApiUrl}/Product`
@@ -71,20 +72,42 @@ function insertItem(product) {
     <td>${product.name}</td>
     <td>R$ ${product.price}</td>
     <td>${product.quantidade}</td>
-    <td class="acao">
-      <button onclick="editItem()"><i class='bx bx-edit'></i></button>
+    <td>
+      <button id="sell-${product.id}"><i class='bx bx-purchase-tag-alt'></i></button>
     </td>
     <td>
-      <button id="${product.id}"><i class='bx bx-trash'></i></button>
+      <button id="delete-${product.id}"><i class='bx bx-trash'></i></button>
     </td>
     </tr>`;
 
   setTimeout(() => {
-    const deleteButton = document.getElementById(product.id);
-    deleteButton.addEventListener('click', () => {
+
+    const deleteButton = document.getElementById(`delete-${product.id}`);
+    const deleteButtonId = deleteButton.id;
+
+      deleteButton.addEventListener('click', function(){
+        openModalRemove(deleteButtonId);
+        document.getElementById("sim").addEventListener('click', function (){
+          deleteItem(product.id);
+         });
+      });
+
+  }, 0);
+  setTimeout(() => {
+
+    const sellButton = document.getElementById(`sell-${product.id}`);
+    sellButton.addEventListener('click', () => {
+
+
       console.log(product.id)
-      deleteItem(product.id);
+      openModalInsert();
+
+      document.getElementById("btnSalvar").addEventListener("click", function () {
+        sellItem(product.id);
+      });
+
     });
+
   }, 0);
 
   return row;
@@ -105,9 +128,9 @@ function deleteItem(productId) {
     },
   }
 
-  const row = document.getElementById(productId).parentNode.parentNode;
+  const row = document.getElementById(`delete-${productId}`).parentNode.parentNode;
 
-  fetch(`${apiUrl}?id=${productId}`, options)
+  fetch(`${apiUrl}?productID=${productId}`, options)
     .then(response => {
       if (response.ok) {
         row.remove();
@@ -118,3 +141,32 @@ function deleteItem(productId) {
     })
     .catch(error => console.error('Erro na requisição:', error));
 }
+
+function sellItem(productId) {
+  const quantidade = document.querySelector('#m-quantidade').value
+
+  var _data = {
+    id: productId, 
+    quantidade: quantidade,
+  }
+
+  var options = {
+    method: "POST",
+    body: JSON.stringify(_data),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      Authorization: 'Bearer ' + token
+    },
+  }
+
+  fetch(`${apiUrl}/ReportSale`, options)
+    .then(response => {
+      if (response.ok) {
+        console.log("ok")
+      } else {
+        console.error('Erro ao VENDER produto:', response.status);
+      }
+    })
+    .catch(error => console.error('Erro na requisição:', error));
+}
+

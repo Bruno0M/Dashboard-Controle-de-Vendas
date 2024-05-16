@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         setTimeout(() => {
             preLoad.classList.remove('loading')
-        }, 1800)
+        }, 5000)
     });
 
 });
