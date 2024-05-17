@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const categoriasQuantidades = {};
 
             data.data.forEach(item => {
-                if (categoriasQuantidades[item.categoria]) {
-                    categoriasQuantidades[item.categoria] += item.quantidade;
+                if (categoriasQuantidades[item.category]) {
+                    categoriasQuantidades[item.category] += item.quantity;
                 } else {
-                    categoriasQuantidades[item.categoria] = item.quantidade;
+                    categoriasQuantidades[item.category] = item.quantity;
                 }
             });
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            const quant = data.data.map(item => item.quantidade);
+            const quant = data.data.map(item => item.quantity);
             const precos = data.data.map(item => item.price);
 
             function total(quant, precos) {
