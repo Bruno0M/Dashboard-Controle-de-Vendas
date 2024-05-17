@@ -169,5 +169,104 @@
         padding: 10px;
     }
 }
-  
+/* css logout*/
+
+img {
+    width: 82px;
+    height: 63px;
+    display: block;
+    margin-left: 175px;
+}
+
+hr {
+    border: 0px;
+    border-top: 1px solid lightgray;
+}
+
+.modal-logout {
+    width: 100vw;
+    position: fixed;
+    top: 30px;
+    display: none; 
+    z-index: 999;
+    justify-content: center;
+}
+
+.modal-content-logout {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Espaço entre header e conteúdo */
+}
+
+.modal-header h2 {
+    margin-right: 20px; /* Espaço entre o título e a imagem */
+}
+
+.active {
+    display: flex;
+}
+
+.active .modal-content-logout {
+    animation: modal .4s;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -50px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+span {
+    margin: 45px auto;
+}
+
+.btns {
+    display: flex;
+    margin-top: 10px; /* Corrigido */
+    justify-content: right;
+}
+
+.btns button {
+    font-size: medium;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+    margin-right: 15px;
+}
+
+.btnok {
+    background-color: brown;
+}
+
+.btnClose {
+    background-color: blue;
+}
+
+@media (max-width: 500px) {
+    .modal-content-logout {
+        padding: 10px;
+        width: 80%;
+    }
+    
+    span, .btns button {
+        font-size: smaller;
+    }
+}
 
