@@ -117,7 +117,7 @@ tr {
 }
 
 tbody tr td {
-  vertical-align: text-top;
+  text-align: center;
   padding: 20px 0;
   max-width: 50px;
 }
@@ -338,4 +338,17 @@ td button i:first-child {
 
 .btn-danger:hover {
   background-color: #cc0000;
+}
+
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+.chart-box01{
+    width: 380px;
+}
+.box-donut {
+	margin-top: 10px;
+	height: 390px;
+}
+.chart-box02{
+  width: 300px;
+}
 }
