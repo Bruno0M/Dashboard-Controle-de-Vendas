@@ -6,17 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="./pages/home/home.css">
+  <link rel="stylesheet" href="./pages/preloadplugins/preload.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script type="module" src="./pages/preloadplugins/preload.js"></script>
   <script type="module" src="./pages/home/home.js"></script>
   <title>home</title>
 </head>
 
 <body>
+  <div class="box-load">
+    <div class="pre"></div>
+  </div>
+   <div class="content">
   <header>
     <div class="interface">
       <div class="logo">
         <a href="#">
-          <img src="assets/images-home/logoSi.png" alt="Logo" width="70px">
+          <img src="./assets/images-home/logoSi.png" alt="Logo" width="70px">
         </a>
       </div>
 
@@ -157,6 +163,7 @@
     <div class="line-footer">
     </div>
   </footer>
+  </div>
 </body>
 
 </html>
