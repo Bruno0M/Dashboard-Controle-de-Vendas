@@ -71,7 +71,7 @@
 .graphics-bar {
     display: flex;
     flex-direction: column;
-    width: 74vh;
+    width: 650px;
 }
 
 .graph-box-bar {
@@ -89,6 +89,7 @@
     align-items: center;
     background-image: linear-gradient(to right, #002aff9a, #161A6C);
     border-radius: 15px;
+    height: 700px;
 
 }
 
@@ -109,6 +110,7 @@
     align-items: flex-start;
     width: 300px;
     height: auto;
+    margin-top: 50%;
 }
 
 .progress-bar-container {
@@ -131,6 +133,10 @@
 
 .graph-container-side h2{
     color: white;
+}
+.graph-container-side h1{
+	color: #fff;
+	margin-top: 40px;
 }
 
 @media screen and (max-width: 1366px) and (max-height: 768px) {
