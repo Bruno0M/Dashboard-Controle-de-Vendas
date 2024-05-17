@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var _data = {
       name: produto,
-      categoria: categoria,
+      category: categoria,
       price: valor,
-      quantidade: quantidade
+      quantity: quantidade
     }
 
     var options = {
@@ -68,10 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
 function insertItem(product) {
   const row = `
     <tr>
-    <td>${product.categoria}</td>
+    <td>${product.category}</td>
     <td>${product.name}</td>
     <td>R$ ${product.price}</td>
-    <td>${product.quantidade}</td>
+    <td>${product.quantity}</td>
     <td>
       <button id="sell-${product.id}"><i class='bx bx-purchase-tag-alt'></i></button>
     </td>
@@ -147,7 +147,7 @@ function sellItem(productId) {
 
   var _data = {
     id: productId, 
-    quantidade: quantidade,
+    quantity: quantidade,
   }
 
   var options = {
