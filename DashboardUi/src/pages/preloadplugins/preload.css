@@ -2,17 +2,13 @@
     0% {
         transform: scale(1) rotate(0deg);
     }
-
-    60%{
-        transform: scale(1) rotate(180deg);
-    }
     100% {
-        transform: scale(50) rotate(720deg); /* Ajustado para um zoom profundo */
+        transform: scale(200) rotate(2048deg); /* Ajustado para um zoom profundo */
     }
 }
 
 @keyframes loadComplete {
-    0% {
+    50% {
         opacity: 1;
     }
     100% {
