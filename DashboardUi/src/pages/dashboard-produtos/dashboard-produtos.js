@@ -1,10 +1,8 @@
+import { logout } from "../../middlewares/auth.middleware";
+
+logout();
 
 const modalInsert = document.querySelector('.modal-container')
-const tbody = document.querySelector('tbody')
-const categoria = document.querySelector('#m-categoria')
-const produto = document.querySelector('#m-produto')
-const valor = document.querySelector('#m-valor')
-const quantidade = document.querySelector('#m-quantidade')
 const btnSalvar = document.querySelector('#btnSalvar')
 
 const modalRemove = document.querySelector('.modal-remove')

@@ -17,3 +17,29 @@ export function isAuthenticated() {
   
   return true;
 }
+
+
+
+export function logout(){
+
+  const modalLogout = document.querySelector('.modal-logout')
+  const btnConfirm = document.querySelector('.btnClose')
+  const btnClose = document.querySelector('.btnok')
+
+  document.getElementById('btnLogout').addEventListener("click", function(event){
+    event.preventDefault();
+  
+    modalLogout.classList.add('active');
+  
+    btnConfirm.onclick = e =>{
+      e.preventDefault();
+      console.log('fechou cancelar')
+      localStorage.removeItem('token');
+          window.location.href = '/pages/auth/index.html';
+    }
+    btnClose.onclick = e => {
+      e.preventDefault();
+      modalLogout.classList.remove('active')
+    }
+  })
+}

@@ -116,7 +116,8 @@
 .progress-bar-container {
     display: flex;
     align-items: center;
-    width: 100%; /* Ocupa toda a largura do contêiner */
+    width: 100%;
+    /* Ocupa toda a largura do contêiner */
 }
 
 .progress-bar {
@@ -131,12 +132,13 @@
     margin-left: 10px;
 }
 
-.graph-container-side h2{
+.graph-container-side h2 {
     color: white;
 }
-.graph-container-side h1{
-	color: #fff;
-	margin-top: 40px;
+
+.graph-container-side h1 {
+    color: #fff;
+    margin-top: 40px;
 }
 
 @media screen and (max-width: 1366px) and (max-height: 768px) {
@@ -149,15 +151,18 @@
         align-items: center;
         background-image: linear-gradient(to right, #002aff9a, #161A6C);
         border-radius: 15px;
-     }
-     .graph-box-doughnut {
+    }
+
+    .graph-box-doughnut {
         width: 280px;
     }
+
     .graphics-bar {
         display: flex;
         flex-direction: column;
         width: 65vh;
     }
+
     .box-info-single {
         display: flex;
         font-size: 15px;
@@ -169,13 +174,11 @@
         padding: 10px;
     }
 }
-/* css logout*/
 
-img {
+/* css logout */
+
+.modal-header img {
     width: 82px;
-    height: 63px;
-    display: block;
-    margin-left: 175px;
 }
 
 hr {
@@ -184,11 +187,15 @@ hr {
 }
 
 .modal-logout {
-    width: 100vw;
+    display: none;
     position: fixed;
-    top: 30px;
-    display: none; 
     z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
     justify-content: center;
 }
 
@@ -198,17 +205,17 @@ hr {
     padding: 5px;
     background-color: white;
     border-radius: 10px;
-    width: 50%;
+    width: 30%;
 }
 
 .modal-header {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px; /* Espaço entre header e conteúdo */
+    justify-content: center;
+    margin-bottom: 8px;
 }
 
-.modal-header h2 {
-    margin-right: 20px; /* Espaço entre o título e a imagem */
+.content-logout h2 {
+    padding-top: 10px;
 }
 
 .active {
@@ -221,22 +228,26 @@ hr {
 
 @keyframes modal {
     from {
-        opacity: 0;
-        transform: translate3d(0, -50px, 0);
+      opacity: 0;
+      transform: translate3d(0, -60px, 0);
     }
     to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
     }
-}
+  }
 
 span {
-    margin: 45px auto;
+    display: flex;
+    padding-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 .btns {
     display: flex;
-    margin-top: 10px; /* Corrigido */
+    margin-top: 10px;
     justify-content: right;
 }
 
@@ -258,15 +269,3 @@ span {
 .btnClose {
     background-color: blue;
 }
-
-@media (max-width: 500px) {
-    .modal-content-logout {
-        padding: 10px;
-        width: 80%;
-    }
-    
-    span, .btns button {
-        font-size: smaller;
-    }
-}
-

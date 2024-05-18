@@ -6,9 +6,10 @@ var token = localStorage.getItem('token');
 const apiUrl = `${environment.ApiUrl}/Product`
 
 document.addEventListener("DOMContentLoaded", function () {
+
   if (!isAuthenticated()) window.location.href = "/pages/auth/";
 
-
+});
 
   document.getElementById("btnSalvar").addEventListener("click", function (event) {
     event.preventDefault();
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return response.json()
     })
     .then(data => displayProducts(data))
-});
+
 
 function insertItem(product) {
   const row = `

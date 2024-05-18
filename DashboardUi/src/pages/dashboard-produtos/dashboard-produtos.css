@@ -254,32 +254,6 @@ td button i:first-child {
   margin-right: 10px;
 }
 
-#box-progress-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 300px;
-    height: auto;
-}
-
-.progress-bar-container {
-    display: flex;
-    align-items: center;
-    width: 100%; /* Ocupa toda a largura do contêiner */
-}
-
-.progress-bar {
-    height: 5px;
-    background-color: #4caf50;
-    margin-bottom: 5px;
-    border-radius: 10px;
-}
-
-.progress-text {
-    font-size: 14px;
-    margin-left: 10px;
-}
-
 .modal-remove {
   display: none;
   position: fixed;
@@ -306,10 +280,6 @@ td button i:first-child {
 
 .active {
   display: flex;
-}
-
-.active .modal, .modal-content{
-  animation: modal .4s;
 }
 
 .btn-success {
@@ -355,11 +325,8 @@ td button i:first-child {
 
 /* css logout*/
 
-img {
+.modal-header img {
   width: 82px;
-  height: 63px;
-  display: block;
-  margin-left: 175px;
 }
 
 hr {
@@ -368,11 +335,15 @@ hr {
 }
 
 .modal-logout {
-  width: 100vw;
+  display: none;
   position: fixed;
-  top: 30px;
-  display: none; 
   z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  align-items: center;
   justify-content: center;
 }
 
@@ -382,17 +353,17 @@ hr {
   padding: 5px;
   background-color: white;
   border-radius: 10px;
-  width: 50%;
+  width: 30%;
 }
 
 .modal-header {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px; /* Espaço entre header e conteúdo */
+  justify-content: center;
+  margin-bottom: 8px;
 }
 
-.modal-header h2 {
-  margin-right: 20px; /* Espaço entre o título e a imagem */
+.content-logout h2 {
+  padding-top: 10px;
 }
 
 .active {
@@ -403,19 +374,18 @@ hr {
   animation: modal .4s;
 }
 
-@keyframes modal {
-  from {
-      opacity: 0;
-      transform: translate3d(0, -50px, 0);
-  }
-  to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-  }
+span {
+  display: flex;
+  padding-bottom: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
-span {
-  margin: 45px auto;
+.active .modal, 
+.modal-content,
+.modal-content-logout{
+  animation: modal .4s;
 }
 
 .btns {
@@ -441,15 +411,4 @@ span {
 
 .btnClose {
   background-color: blue;
-}
-
-@media (max-width: 500px) {
-  .modal-content-logout {
-      padding: 10px;
-      width: 80%;
-  }
-  
-  span, .btns button {
-      font-size: smaller;
-  }
 }

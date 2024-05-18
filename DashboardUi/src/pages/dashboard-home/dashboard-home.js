@@ -1,6 +1,8 @@
-import { isAuthenticated } from "../../middlewares/auth.middleware";
+import { isAuthenticated, logout } from "../../middlewares/auth.middleware";
 
 if (!isAuthenticated()) window.location.href = "/pages/auth/";
+
+logout();
 
 const CHART_COLORS = {
   cat1: 'rgb(5, 67, 109)',
@@ -128,3 +130,4 @@ var progressBarsContainer = document.getElementById("box-progress-bar");
 produtos.forEach(function (produto) {
   updateProgressBar(progressBarsContainer, produto.quantidade);
 });
+
