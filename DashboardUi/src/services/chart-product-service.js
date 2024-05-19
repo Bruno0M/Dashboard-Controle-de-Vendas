@@ -85,16 +85,50 @@ document.addEventListener("DOMContentLoaded", function () {
                 return quant * precos;
             }
 
-            const totais = quant.map((quantidade, index) => total(quantidade, precos[index]));
+      // Gráfico total dos itens
+
+      const monthSumPrices = {};
+
+      data.data.forEach((item) => {
+        const creationDate = new Date(item.creationDate);
+        const month = creationDate.getMonth();
+        const totalPrice = item.price * item.quantity;
+
+        if (monthSumPrices[month]) {
+          monthSumPrices[month] += totalPrice;
+        } else {
+          monthSumPrices[month] = totalPrice;
+        }
+      });
+
+      const monthLabels = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+      ];
+
+      const months = Object.keys(monthSumPrices).map(Number);
+      const totalPrices = Object.values(monthSumPrices);
+
+      const labels = months.map((month) => monthLabels[month]);
 
             new Chart(line01, {
                 type: 'line',
                 data: {
-                    labels: ['Mes1', 'Mes2', 'Mes3', 'Mes4'],
+          labels: labels,
                     datasets: [
                         {
-                            label: 'Dataset',
-                            data: totais,
+              label: 'Total',
+              data: totalPrices,
                             borderColor: 'red',
                             backgroundColor: 'rgba(255, 0, 0, 0.2)',
                             fill: true
