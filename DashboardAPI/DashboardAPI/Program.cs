@@ -90,14 +90,20 @@ namespace DashboardAPI
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+
+                app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
             }
 
+            //Configure Cors.
+            var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Value;
+
             app.UseCors(x => x
-            .AllowAnyOrigin()
+            .WithOrigins(allowedOrigins)
             .AllowAnyMethod()
             .AllowAnyHeader());
-
-            //app.UseHttpsRedirection();
 
             app.UseAuthentication();
             app.UseAuthorization();
