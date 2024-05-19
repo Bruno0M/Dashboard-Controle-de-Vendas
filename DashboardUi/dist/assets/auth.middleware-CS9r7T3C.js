@@ -1,1 +1,0 @@
-function r(){const e=localStorage.getItem("token");if(!e)return!1;const t=JSON.parse(atob(e.split(".")[1])).exp*1e3;return Date.now()>=t?(localStorage.removeItem("token"),window.location.href="/pages/auth/",!1):!0}export{r as i};
