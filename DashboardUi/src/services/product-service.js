@@ -37,11 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fetch(`${apiUrl}`, options)
       .then(response => {
-        if (!response.ok) throw new Error(response.statusText());
+        if (!response.ok) throw new Error(response.statusText);
         return response.json();
       })
-      .then(newProduct => {
-        const newRow = insertItem(newProduct);
+      .then(data => {
+        
+        const newRow = insertItem(data.data);
         document.getElementById('product-rows').insertAdjacentHTML('beforeend', newRow);
       })
       .then(json => console.log(json))
