@@ -11,26 +11,24 @@ services:
         depends_on:
             - dashboard-db
         networks:
-            dashboard_net:
-    
+            dev:
 
     dashboard-db:
-        image: mcr.microsoft.com/mssql/server:2022-latest
+        image: postgres:latest
         environment:
-            - "ACCEPT_EULA=Y"
-            - "MSSQL_SA_PASSWORD=Dashboard01"
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_DB=Dashboard_DB_DEV
         volumes:
-            - "dashboard-mssql:/var/opt/mssql"
+            - "dashboard-data:/var/lib/postgresql/data"
         ports:
-            - 8002:1433
+            - 8002:5432
         networks:
-            - dashboard_net
-
+            - dev
 
 volumes:
-    dashboard-mssql:
-
+    dashboard-data:
 
 networks:
-    dashboard_net:
+    dev:
         driver: bridge
