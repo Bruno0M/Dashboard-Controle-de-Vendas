@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!isAuthenticated()) window.location.href = "/pages/auth/";
 
-});
 
   document.getElementById("btnSalvar").addEventListener("click", function (event) {
     event.preventDefault();
@@ -49,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch(err => console.log(err));
   });
 
-
   var options = {
     method: "GET",
     headers: {
@@ -66,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .then(data => displayProducts(data))
 
+  });
 
 function insertItem(product) {
   const row = `
