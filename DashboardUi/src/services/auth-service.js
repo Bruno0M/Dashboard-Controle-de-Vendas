@@ -1,5 +1,6 @@
 import { devEnvironment, environment } from "../environments/environments.js";
 import { isAuthenticated } from "../middlewares/auth.middleware.js";
+import { modalSucesso } from "../middlewares/auth.middleware.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   if (isAuthenticated()) window.location.href = "/pages/dashboard-home/";
@@ -31,9 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(`${apiUrl}/Register`, options)
       .then(response => {
         if(!response.ok) throw new Error(response.statusText());
+        modalSucesso();
         return response.json();
       })
-      alert('Usuário registrado com sucesso!')
+      
 
     });
 

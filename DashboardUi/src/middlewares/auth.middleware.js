@@ -43,3 +43,13 @@ export function logout(){
     }
   })
 }
+
+export function modalSucesso(){
+  
+  const modal = document.getElementById('bg');
+
+  modal.classList.add('active');
+        setTimeout(() => {
+        modal.classList.remove('active');
+        }, 6000);
+}
