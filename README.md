@@ -35,8 +35,6 @@
 
 <h2 id="started">🚀 Vamos Começar!</h2>
 
-Here you describe how to run your project locally
-
 <h3>Pré-Requisitos</h3>
 
 Para rodar o projeto, é necessário que tenha:
@@ -72,29 +70,31 @@ Em seguida, você vai ter a API Rodando em na porta `4652`, e caso queira ver a 
 A porta `8002` é onde está rodando o banco de dados, e caso queira administrar esse banco, basta acessar o `pgadmin4` em `http://localhost:16543/login`
 
 <h2 id="routes">📍 API Endpoints</h2>
+A seguir é possível visualizar os endpoints atuais do projeto, mas para uma melhor visualização da documentação, rode a API e acesse com o Swagger.
 
-Here you can list the main routes of your API, and what are their expected request bodies.
 ​
 | route               | description                                          
 |----------------------|-----------------------------------------------------
 **Auth**
-| <kbd>POST /api/Auth/Register</kbd>  Registrar um usuário no sistema [da]
-| <kbd>POST /api/Auth/Login</kbd>        Logar o usuário no sistema
+| <kbd>POST /api/Auth/Register</kbd> | Registrar um usuário no sistema
+| <kbd>POST /api/Auth/Login</kbd>     |   Logar o usuário no sistema
 **History**
-| <kbd>GET /api/History</kbd>     Retorna o histórico de vendas
+| <kbd>GET /api/History</kbd>  |   Retorna o histórico de vendas
 **Product**
-| <kbd>POST /api/Product</kbd>     Cria um novo produto
-| <kbd>GET /api/Product</kbd>     Pega todos os produtos do usuario autenticado
-| <kbd>DELETE /api/Product</kbd>     Deleta um produto
-| <kbd>POST /api/Product/ReportSale</kbd>     Reporta uma venda e cria o histórico dessa venda
+| <kbd>POST /api/Product</kbd>  |   Cria um novo produto
+| <kbd>GET /api/Product</kbd>    | Pega todos os produtos do usuario autenticado
+| <kbd>DELETE /api/Product</kbd>  |   Deleta um produto
+| <kbd>POST /api/Product/ReportSale</kbd>  |   Reporta uma venda e cria o histórico dessa venda
 **User**
-| <kbd>GET /api/User</kbd>     Retorna algumas informações do usuário
+| <kbd>GET /api/User</kbd>  |   Retorna algumas informações do usuário
 
 
 
 <h2 id="contribute">📫 Como Contribuir?!</h2>
 
-Para contribuir para o projeto, siga essas instruções:
+O projeto é totalmente Open Source, sinta-se a vontade para aprender e fazer contribuições, seja fazendo um PR ou abrindo uma Issue! :)
+
+Para contribuir para o projeto, siga essas instruções caso vá adicionar uma nova feature::
 
 1. Faça um Fork do projeto e clone ele.
 2. Para implementar uma nova feature, crie uma nova branch seguindo esse padrão: `git checkout -b feature/NAME`
