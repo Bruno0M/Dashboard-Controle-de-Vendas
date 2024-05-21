@@ -71,11 +71,11 @@ const donut01 = document.getElementById('graph03');
 new Chart(donut01, {
   type: 'doughnut',
   data: {
-    labels: ['Categoria A', 'Categoria B', 'Categoria C', 'D', 'E', 'F', 'G'],
+    labels: ['Categoria A', 'Categoria B', 'Categoria C', 'Categoria D'],
 
     datasets: [{
       label: '# of Votes',
-      data: [10, 10, 10, 10, 10, 10, 10],
+      data: [10, 10, 10, 10,],
       borderWidth: 1,
       backgroundColor: Object.values(CHART_COLORS),
     }],
@@ -120,8 +120,6 @@ var produtos = [
   { quantidade: 50 },
   { quantidade: 30 },
   { quantidade: 64 },
-  { quantidade: 98 },
-  { quantidade: 11 },
   { quantidade: 32 }
 ];
 
