@@ -84,6 +84,9 @@ new Chart(donut01, {
       plugins: {
         legend: {
           position: 'top',
+          labels: {
+            color: 'white'
+          }
         },
         title: {
           display: true,
