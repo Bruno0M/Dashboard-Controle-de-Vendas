@@ -1,6 +1,6 @@
 import { devEnvironment, environment } from '../environments/environments.js';
 
-const apiUrl = `${environment.ApiUrl}/Product`;
+const apiUrl = `${devEnvironment.ApiUrl}/Product`;
 
 var token = localStorage.getItem('token');
 

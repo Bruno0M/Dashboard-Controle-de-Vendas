@@ -2,7 +2,7 @@ import { devEnvironment, environment } from "../environments/environments.js";
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const apiUrl = environment.ApiUrl
+    const apiUrl = devEnvironment.ApiUrl
 
 
     var token = localStorage.getItem('token');

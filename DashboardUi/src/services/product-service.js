@@ -3,7 +3,7 @@ import { isAuthenticated } from "../middlewares/auth.middleware.js";
 import { openModalInsert, openModalRemove } from "../pages/dashboard-produtos/dashboard-produtos.js"; 
 
 var token = localStorage.getItem('token');
-const apiUrl = `${environment.ApiUrl}/Product`
+const apiUrl = `${devEnvironment.ApiUrl}/Product`
 
 document.addEventListener("DOMContentLoaded", function () {
 

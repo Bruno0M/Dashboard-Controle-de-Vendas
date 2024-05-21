@@ -1,7 +1,7 @@
 import { isAuthenticated, logout } from "../../middlewares/auth.middleware";
 import { devEnvironment, environment } from '../../environments/environments.js';
 
-const apiUrl = `${environment.ApiUrl}`;
+const apiUrl = `${devEnvironment.ApiUrl}`;
 
 var token = localStorage.getItem('token');
 
