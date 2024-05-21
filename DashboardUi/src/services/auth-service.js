@@ -4,7 +4,7 @@ import { modalSucesso } from "../middlewares/auth.middleware.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   if (isAuthenticated()) window.location.href = "/pages/dashboard-home/";
-  const apiUrl = `${devEnvironment.ApiUrl}/Auth`
+  const apiUrl = `${environment.ApiUrl}/Auth`
 
   document.getElementById("form-register").addEventListener("submit", function (event) {
     event.preventDefault();

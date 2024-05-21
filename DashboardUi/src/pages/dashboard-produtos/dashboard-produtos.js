@@ -55,9 +55,36 @@ export function openModalRemove(productId){
     modalInsert.onclick = e => {
       if (e.target.className.indexOf('modal-container') !== -1){
         modalInsert.classList.remove('active')
+        console.log('click')
       }
     }
   });
+
+const modalSell = document.querySelector('.modal-sell')
+
+export function openModalSell(productId) {
+  modalSell.classList.add('active');
+
+  document.getElementById(productId).addEventListener("click", function (event){
+    event.preventDefault();
+  
+    openModalSell();
+  });
+  
+    btnSalvar.onclick = e => {
+      e.preventDefault();
+      modalSell.classList.remove('active')
+    }
+  
+    modalSell.onclick = e => {
+      if (e.target.className.indexOf('modal-sell') !== -1){
+        modalSell.classList.remove('active')
+        console.log('click')
+      }
+    }
+  
+
+}
 
 
 
