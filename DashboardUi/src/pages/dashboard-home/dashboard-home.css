@@ -155,6 +155,7 @@
     }
     #box-progress-bar {
         margin-top: 15px;
+        gap: 0;
     }
 
     .graph-box-doughnut {
