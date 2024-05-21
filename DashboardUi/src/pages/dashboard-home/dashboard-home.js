@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
               label: 'Meta',
-              data: [1200],
+              data: [500, 1000],
               backgroundColor: 'rgba(91, 213, 88, 0.8 )',
             },
           ]

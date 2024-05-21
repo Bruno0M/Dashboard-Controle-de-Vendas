@@ -1,6 +1,6 @@
 import { devEnvironment, environment } from "../environments/environments.js";
 import { isAuthenticated } from "../middlewares/auth.middleware.js";
-import { openModalInsert, openModalRemove } from "../pages/dashboard-produtos/dashboard-produtos.js"; 
+import { openModalSell, openModalRemove } from "../pages/dashboard-produtos/dashboard-produtos.js"; 
 
 var token = localStorage.getItem('token');
 const apiUrl = `${environment.ApiUrl}/Product`
@@ -97,13 +97,15 @@ function insertItem(product) {
   setTimeout(() => {
 
     const sellButton = document.getElementById(`sell-${product.id}`);
-    sellButton.addEventListener('click', () => {
+    const sellButtonId = sellButton.id;
 
-
+    console.log(sellButtonId)
+    sellButton.addEventListener('click', function(){
       console.log(product.id)
-      openModalInsert();
 
-      document.getElementById("btnSalvar").addEventListener("click", function () {
+      openModalSell(sellButtonId);
+
+      document.getElementById("btnSalvar").addEventListener("click", function (){
         sellItem(product.id);
       });
 

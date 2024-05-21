@@ -274,3 +274,78 @@ span {
 .btnClose {
     background-color: blue;
 }
+
+.section-title {
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    font-size: 19px;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+.feed {
+    margin: 10px 0;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.feed-single {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+.feed-text {
+    display: flex;
+    align-items: center; 
+}
+
+
+.feed-text .circle-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; 
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.feed-text .circle-icon-notification {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; 
+    background-color: #5690f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+
+.feed-text i {
+    font-size: 18px;
+    color: white;
+}
+
+
+.feed-text span {
+    color: black;
+    margin: 8px;
+}
+
+
+.feed-time {
+    color: #444;
+}
