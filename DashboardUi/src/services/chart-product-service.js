@@ -79,9 +79,12 @@ document.addEventListener('DOMContentLoaded', function () {
       const monthSumPrices = {};
 
       data.data.forEach((item) => {
+
         const creationDate = new Date(item.creationDate);
         const month = creationDate.getMonth();
         const totalPrice = item.price * item.quantity;
+        console.log(month)
+
 
         if (monthSumPrices[month]) {
           monthSumPrices[month] += totalPrice;
@@ -104,11 +107,14 @@ document.addEventListener('DOMContentLoaded', function () {
         'Nov',
         'Dec',
       ];
+      console.log(monthLabels)
 
       const months = Object.keys(monthSumPrices).map(Number);
+      console.log(months)
       const totalPrices = Object.values(monthSumPrices);
 
       const labels = months.map((month) => monthLabels[month]);
+      console.log(labels)
 
       new Chart(line01, {
         type: 'line',

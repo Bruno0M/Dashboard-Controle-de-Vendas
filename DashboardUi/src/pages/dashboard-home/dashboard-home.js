@@ -1,4 +1,9 @@
 import { isAuthenticated, logout } from "../../middlewares/auth.middleware";
+import { devEnvironment, environment } from '../../environments/environments.js';
+
+const apiUrl = `${environment.ApiUrl}`;
+
+var token = localStorage.getItem('token');
 
 if (!isAuthenticated()) window.location.href = "/pages/auth/";
 
@@ -16,32 +21,92 @@ const CHART_COLORS = {
 
 const bar01 = document.getElementById('graph01');
 
-new Chart(bar01, {
-  type: 'bar',
-  data: {
-    labels: ['Mes1', 'Mes2', 'Mes3', 'Mes4'],
-    datasets: [
-      {
-        label: 'Dataset 1',
-        data: [1000, 2000, 3000, 4000],
-        backgroundColor: 'rgba(21, 94, 147, 0.8 )',
-      },
-      {
-        label: 'Dataset 2',
-        data: [1200, 1300, 1400, 1500],
-        backgroundColor: 'rgba(91, 213, 88, 0.8 )',
-      },
-    ]
+var options = {
+  method: 'GET',
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+    Authorization: 'Bearer ' + token,
   },
-  options: {
-    barThickness: 40,
-    responsive: true,
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+  fetch(`${apiUrl}/History`, options)
+    .then((response) => {
+      if (!response.ok) throw new Error(response.statusText());
+      return response.json();
+    })
+    .then((data) => {
+      const monthSumPrices = {};
+
+      data.data.forEach((item) => {
+        const creationDate = new Date(item.dateSale);
+        console.log(creationDate)
+        const month = creationDate.getMonth();
+        console.log(month)
+        const totalPrice = item.amountSale;
+        console.log(totalPrice)
+
+
+        if (monthSumPrices[month]) {
+          monthSumPrices[month] += totalPrice;
+        } else {
+          monthSumPrices[month] = totalPrice;
+        }
+      });
+
+      const monthLabels = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+      ];
+      
+      const months = Object.keys(monthSumPrices).map(Number);
+      console.log(months)
+      const totalPrices = Object.values(monthSumPrices);
+      console.log(totalPrices)
+
+      const labels = months.map((month) => monthLabels[month]);
+      console.log(labels)
+
+      new Chart(bar01, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Faturamento',
+              data: totalPrices,
+              backgroundColor: 'rgba(21, 94, 147, 0.8 )',
+            },
+            {
+              label: 'Meta',
+              data: [1200],
+              backgroundColor: 'rgba(91, 213, 88, 0.8 )',
+            },
+          ]
+        },
+        options: {
+          barThickness: 40,
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+      
+  })
+
 });
 
 const bar02 = document.getElementById('graph02');
