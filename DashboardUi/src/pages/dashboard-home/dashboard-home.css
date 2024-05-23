@@ -178,6 +178,25 @@
         color: white;
         padding: 10px;
     }
+    
+    .feed-single {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: -20px;
+    }
+    
+    .feed-text {
+        display: flex;
+        align-items: center; 
+        font-size: 15px;
+    }
+
+    .feed-time {
+        color: #444;
+        font-size: 15px;
+    }
 }
 
 /* css logout */
